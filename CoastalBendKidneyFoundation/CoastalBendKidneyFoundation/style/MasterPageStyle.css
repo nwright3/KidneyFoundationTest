@@ -3,7 +3,7 @@
 }
 
 .masterheader {
-    background: #ccc;
+    background: #170A66;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,6 +13,7 @@
 
 .branding {
     margin: 0;
+    color: white;
 }
 
 .navigationBar {
@@ -29,9 +30,22 @@
 
 a {
     color: white;
-    text-decoration:none;
+    text-decoration: none;
 }
 
-a:hover {
-    background-color: Highlight;
+    a:hover {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+button {
+    background: transparent;
+    border: 1px solid white;
+    padding: 10px;
+    color: white;
 }
+
+    button:hover {
+        background: cornflowerblue;
+        color: white;
+        cursor:pointer;
+    }
