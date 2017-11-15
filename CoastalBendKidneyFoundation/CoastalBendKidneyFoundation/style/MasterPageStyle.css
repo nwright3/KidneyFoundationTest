@@ -26,3 +26,12 @@
     justify-content: space-around;
     align-items: center;
 }
+
+a {
+    color: white;
+    text-decoration:none;
+}
+
+a:hover {
+    background-color: Highlight;
+}

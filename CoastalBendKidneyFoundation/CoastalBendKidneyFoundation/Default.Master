@@ -22,7 +22,9 @@
                 <li><a runat="server" href="Home.aspx">Home</a></li>
                 <li><a runat="server" href="#">About</a></li>
                 <li><a runat="server" href="#">Contact</a></li>
-                <li><a runat="server" href="#">Products</a></li>
+                <li><a runat="server" href="#">Donate</a></li>
+                <li><a runat="server" href="#">Login</a></li>
+                <li><a runat="server" href="#">Signup</a></li>
             </ul>
         </nav>
     </header>

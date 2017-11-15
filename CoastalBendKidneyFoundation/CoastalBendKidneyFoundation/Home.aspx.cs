@@ -41,7 +41,6 @@ namespace CoastalBendKidneyFoundation
             {
                 Image1.ImageUrl = "~/images/" + imageDataRow["Img_Name"].ToString();
                 //name.Text = imageDataRow["Img_Name"].ToString();
-                //name.Text = "Null";
             }
 
             // Otherwise, procede to SetImageUrl
@@ -71,8 +70,6 @@ namespace CoastalBendKidneyFoundation
             // Printing the url
             DataRow imageDataRow = ds.Tables["image"].Select().FirstOrDefault(x => x["Img_Order"].ToString() == "1");
             Image1.ImageUrl = "~/=images/" + imageDataRow["Img_Name"].ToString();
-            //name.Text = "Not Null";
-
         }
     }
 }
