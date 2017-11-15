@@ -7,16 +7,25 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="~/style/MasterPageStyle.css" type="text/css" />
 </head>
 <body>
-    <h1>Master Page</h1>
 
-    <ul class="nav navbar-nav">
-        <li><a runat="server" href="Home.aspx">Home</a></li>
-        <li><a runat="server" href="#">About</a></li>
-        <li><a runat="server" href="#">Contact</a></li>
-        <li><a runat="server" href="#">Products</a></li>
-    </ul>
+    <header class="masterheader">
+
+        <div class="branding">
+            <h1>Costalbend Kidney Foundation</h1>
+        </div>
+
+        <nav class="navigationBar">
+            <ul class="navbarUl">
+                <li><a runat="server" href="Home.aspx">Home</a></li>
+                <li><a runat="server" href="#">About</a></li>
+                <li><a runat="server" href="#">Contact</a></li>
+                <li><a runat="server" href="#">Products</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <form id="form1" runat="server">
 
@@ -24,6 +33,7 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+
     </form>
 
     <footer>Copyright @ Costalbend Kidney Foundation</footer>
