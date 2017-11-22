@@ -25,32 +25,36 @@
         <tr>
             <td class="auto-style1">Event Name:</td>
             <td class="auto-style2">
-                <asp:TextBox ID="TextBox6" runat="server" CssClass="auto-style4" Width="237px"></asp:TextBox>
+                <asp:TextBox ID="EvtName" runat="server" CssClass="auto-style4" Width="237px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style1">Event Date:&nbsp;</td>
             <td class="auto-style2">
-                <asp:TextBox ID="TextBox5" runat="server" CssClass="auto-style4" Width="237px"></asp:TextBox>
+                <asp:TextBox ID="EvtDate" runat="server" CssClass="auto-style4" Width="237px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style1">Event Place:</td>
             <td class="auto-style2">
-                <asp:TextBox ID="TextBox3" runat="server" CssClass="auto-style4" Width="237px"></asp:TextBox>
+                <asp:TextBox ID="EvtPlace" runat="server" CssClass="auto-style4" Width="237px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style1">Event Description:</td>
             <td class="auto-style2">
                 <br class="auto-style4" />
-                <asp:TextBox ID="TextBox4" runat="server" CssClass="auto-style4" Height="78px" Width="237px"></asp:TextBox>
+                <asp:TextBox ID="EvtDescription" runat="server" CssClass="auto-style4" Height="78px" Width="237px"></asp:TextBox>
                 <br />
             </td>
         </tr>
     </table>
     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="Button1" runat="server" Text="Create Event" />
+    <asp:Button ID="Button1" runat="server" Text="Create Event" OnClick="Button1_Click" />
+    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<asp:Label ID="EventUpdateLabel" runat="server" Text="Label" Visible="False"></asp:Label>
+<br />
     <br/>
 </asp:Content>
