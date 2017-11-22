@@ -10,8 +10,17 @@
             <h2>Login</h2>
             <div class="textboxes">
                 <asp:TextBox ID="txtUsername" runat="server" placeHolder="Username" ></asp:TextBox>
+                <br />
                 <asp:TextBox ID="txtPassword" runat="server" placeHolder="Password" TextMode="Password"></asp:TextBox>
+               
             </div>
+
+            <br />
+
+            <asp:CheckBox ID="chkRemember" runat="server" Text="Remember me" />
+
+            <br />
+            <br />
 
             <div class="buttonSubmit">
                 <asp:Button ID="btnSubmit" runat="server" Text="Login" OnClick="btnSubmit_Click" />

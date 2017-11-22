@@ -14,7 +14,15 @@ namespace CoastalBendKidneyFoundation
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Checking to see if there are cookies
+            if (!IsPostBack)
+            {
+                if (Request.Cookies["UserName"] != null && Request.Cookies["Password"] != null)
+                {
+                    txtUsername.Text = Request.Cookies["UserName"].Value;
+                    chkRemember.Checked = true;
+                }
+            }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -37,17 +45,31 @@ namespace CoastalBendKidneyFoundation
             admincmd.CommandText = "SELECT COUNT (Admin_ID) FROM Admin WHERE Admin_Username = '" + txtUsername.Text + "' AND" +
                 " Admin_Password = '" + txtPassword.Text + "'";
 
+            usercmd.CommandText = "SELECT COUNT (User_ID) FROM [User] WHERE User_Username = '" + txtUsername.Text +
+                "' AND User_Password = '" + txtPassword.Text + "';";
+
+            admincmd.Connection = admindb;
+            usercmd.Connection = userdb;
+
             // Using try and catch block cause an exception can occur if something is wrong with database
             try
             {
                 admindb.Open();
-                Int32 result = (Int32)admincmd.ExecuteScalar();
+                userdb.Open();
+                Int32 resultAdmin = (Int32)admincmd.ExecuteScalar();
+                Int32 resultUser = (Int32)usercmd.ExecuteScalar();
 
                 // If there is a admin username and password that matches
-                if (result == 1)
+                if(resultUser == 1)
                 {
                     pass = true;
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('You have logged in!')", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Welcome User!')", true);
+                }
+
+                else if(resultAdmin == 1)
+                {
+                    pass = true;
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Welcome Admin!')", true);
                 }
 
                 else
@@ -67,6 +89,28 @@ namespace CoastalBendKidneyFoundation
             finally
             {
                 admindb.Close();
+                userdb.Close();
+            }
+
+            if (pass)
+            {
+                // Remember what the user type in
+                if (chkRemember.Checked)
+                {
+                    Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(30);
+                }
+                else
+                {
+                    Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(-1);
+                }
+
+                // Trimming to make sure no whitespaces are kept
+                Response.Cookies["UserName"].Value = txtUsername.Text.Trim();
+
+                Session["Logout"] = "false";
+                Session["Username"] = txtUsername.Text;
+                Session["Login"] = "true";
+                Response.Redirect("Home.aspx");
             }
         }
     }
