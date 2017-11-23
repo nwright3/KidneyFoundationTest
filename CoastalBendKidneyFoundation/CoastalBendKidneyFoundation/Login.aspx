@@ -5,6 +5,8 @@
     <asp:sqldatasource ID="userconnection" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString %>" SelectCommand="SELECT * FROM [Admin]"></asp:sqldatasource>
     <asp:SqlDataSource ID="adminconnection" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString %>" SelectCommand="SELECT * FROM [Admin]"></asp:SqlDataSource>
 
+    <link rel="stylesheet" href="~/style/Login.css" type="text/css" />
+
     <div class="main">
         <div class="brand">
             <h2>Login</h2>

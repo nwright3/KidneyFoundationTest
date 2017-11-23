@@ -1,0 +1,12 @@
+﻿body {
+
+}
+
+.main {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: red;
+}
