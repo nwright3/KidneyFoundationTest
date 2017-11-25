@@ -5,8 +5,13 @@
 
     <div class ="main">
         <h2>Email our Development Team!</h2>
+
         <div>
-            <asp:TextBox ID="txtFrom" runat="server" placeHolder="From" TextMode="Email"></asp:TextBox>
+            <asp:TextBox ID="txtFrom" runat="server" placeHolder="Your Email" TextMode="Email"></asp:TextBox>
+        </div>
+
+        <div>
+            <asp:TextBox ID="txtPassword" runat="server" placeHolder="Your Email Account's Password" TextMode="Password"></asp:TextBox>
         </div>
 
         <div>

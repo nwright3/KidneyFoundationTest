@@ -17,31 +17,26 @@ namespace CoastalBendKidneyFoundation
 
         protected void btnSend_Click(object sender, EventArgs e)
         {
-            /*MailMessage mailMessage = new MailMessage(txtFrom.Text, "hreeves682@gmail.com");
-            mailMessage.Subject = txtSubject.Text;
-            mailMessage.Body = txtMessage.Text;
-
-            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-            smtpClient.Credentials = new System.Net.NetworkCredential()
-            {
-                UserName = "hreeves682@gmail.com",
-                Password = "xInSaN3x"
-            };
-
-            smtpClient.EnableSsl = true;
-            smtpClient.Send(mailMessage);*/
-
-            /*MailMessage mail = new MailMessage("hreeves682@gmail.com", "hreeves682@gmail.com", txtSubject.Text, txtMessage.Text);
+            MailMessage mail = new MailMessage(txtFrom.Text, "hreeves983@gmail.com", txtSubject.Text, txtMessage.Text);
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
 
             client.Credentials = new System.Net.NetworkCredential()
             {
-                UserName = "hreeves682@gmail.com",
-                Password = "xInSaN3x"
+                UserName = txtFrom.Text,
+                Password = txtPassword.Text
             };
 
             client.EnableSsl = true;
-            client.Send(mail);*/
+
+            try
+            {
+                client.Send(mail);
+            }
+
+            catch(Exception excpetion)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Could not send message. Please check that all the information is correct. Please check security settings on your email account to allow less secure apps.')", true);
+            }
         }
     }
 }
