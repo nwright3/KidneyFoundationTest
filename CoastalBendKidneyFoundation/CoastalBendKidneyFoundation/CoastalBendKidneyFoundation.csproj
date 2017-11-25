@@ -113,6 +113,7 @@
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Default.Master" />
     <Content Include="Admin.Master" />
+    <Content Include="Admin Controls.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -197,6 +198,13 @@
     </Compile>
     <Compile Include="Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Controls.aspx.cs">
+      <DependentUpon>Admin Controls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin Controls.aspx.designer.cs">
+      <DependentUpon>Admin Controls.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
