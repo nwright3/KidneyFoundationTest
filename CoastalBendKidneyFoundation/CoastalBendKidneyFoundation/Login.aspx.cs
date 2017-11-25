@@ -17,7 +17,7 @@ namespace CoastalBendKidneyFoundation
             // Checking to see if there are cookies
             if (!IsPostBack)
             {
-                if (Request.Cookies["UserName"] != null && Request.Cookies["Password"] != null)
+                if (Request.Cookies["UserName"] != null)
                 {
                     txtUsername.Text = Request.Cookies["UserName"].Value;
                     chkRemember.Checked = true;

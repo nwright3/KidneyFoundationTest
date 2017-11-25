@@ -24,7 +24,7 @@
                 <li><a runat="server" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YY7E3XSXHCUHC&lc=US&item_name=Coastal%20Bend%20Kidney%20Foundation&currency_code=USD&bn=PP%2dDonationsBF%3aDONATE%2epng%3aNonHosted">Donate</a></li>
                 <li><a runat="server" href="Login.aspx">Login</a></li>
                 <li><a runat="server" href="Signup.aspx">Signup</a></li>
-                <li><a runat="server" href="AdminManageUser.aspx">Admin manage users</a></li>
+                <li><a runat="server" href="#">Volunteer</a></li>
             </ul>
         </nav>
     </header>

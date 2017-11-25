@@ -127,6 +127,7 @@
     <Content Include="Signup.aspx" />
     <Content Include="style\Login.css" />
     <Content Include="style\MasterPageStyle.css" />
+    <Content Include="Volunteer.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +190,13 @@
     </Compile>
     <Compile Include="Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Volunteer.aspx.cs">
+      <DependentUpon>Volunteer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Volunteer.aspx.designer.cs">
+      <DependentUpon>Volunteer.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
