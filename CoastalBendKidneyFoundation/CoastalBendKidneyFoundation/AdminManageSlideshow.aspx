@@ -9,33 +9,9 @@
         <AlternatingRowStyle BackColor="#DCDCDC" />
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-            <asp:TemplateField HeaderText="Img_Id" SortExpression="Img_Id">
-                <EditItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("Img_Id") %>'></asp:Label>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("Img_Id") %>'></asp:Label>
-                </ItemTemplate>
-                <FooterTemplate>
-                    <asp:LinkButton ID="lblInsert" runat="server">Insert</asp:LinkButton>
-                </FooterTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Img_Name" SortExpression="Img_Name">
-                <EditItemTemplate>
-                    <asp:Label ID="Label5" runat="server" Text='<%# Bind("Img_Name") %>'></asp:Label>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("Img_Name") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="Img_Order" SortExpression="Img_Order">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Img_Order") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("Img_Order") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
+            <asp:BoundField DataField="Img_Id" HeaderText="Img_Id" InsertVisible="False" ReadOnly="True" SortExpression="Img_Id" />
+            <asp:BoundField DataField="Img_Name" HeaderText="Img_Name" SortExpression="Img_Name" />
+            <asp:BoundField DataField="Img_Order" HeaderText="Img_Order" SortExpression="Img_Order" />
         </Columns>
         <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
         <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
@@ -62,12 +38,11 @@
 
     <br />
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString2 %>" DeleteCommand="DELETE FROM [Images] WHERE [Img_Id] = @Img_Id" InsertCommand="INSERT INTO [Images] ([Img_Id], [Img_Name], [Img_Order]) VALUES (@Img_Id, @Img_Name, @Img_Order)" SelectCommand="SELECT * FROM [Images]" UpdateCommand="UPDATE [Images] SET [Img_Name] = @Img_Name, [Img_Order] = @Img_Order WHERE [Img_Id] = @Img_Id">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString %>" DeleteCommand="DELETE FROM [Images] WHERE [Img_Id] = @Img_Id" InsertCommand="INSERT INTO [Images] ([Img_Name], [Img_Order]) VALUES (@Img_Name, @Img_Order)" SelectCommand="SELECT * FROM [Images]" UpdateCommand="UPDATE [Images] SET [Img_Name] = @Img_Name, [Img_Order] = @Img_Order WHERE [Img_Id] = @Img_Id">
         <DeleteParameters>
             <asp:Parameter Name="Img_Id" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
-            <asp:Parameter Name="Img_Id" Type="Int32" />
             <asp:Parameter Name="Img_Name" Type="String" />
             <asp:Parameter Name="Img_Order" Type="Int32" />
         </InsertParameters>
