@@ -15,10 +15,11 @@ body {
 }
 /* Style the header */
 .header {
-    background-color: #f1f1f1;
+    background-color: #2bbc2b;
     padding: 50px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration:none;
 }
 
 /* Container for flexboxes */
