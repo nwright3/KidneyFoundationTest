@@ -113,5 +113,10 @@ namespace CoastalBendKidneyFoundation
                 Response.Redirect("Home.aspx");
             }
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Signup.aspx");
+        }
     }
 }
