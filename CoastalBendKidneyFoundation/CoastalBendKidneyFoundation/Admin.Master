@@ -22,7 +22,7 @@ header {
     }
     .auto-style10 {
         width: 451px;
-        height: 228px;
+        height: 98px;
     }
     nav {
     float: left;
@@ -47,14 +47,16 @@ td, th {
  
         
  footer {
-    color: blakc;
+    color: black;
     background-color:cornflowerblue;
       opacity:0.8;
     clear: left;
     text-align: center;
-       position: relative;
-        margin-bottom:20px;
-
+      position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
 }
     </style>
 </head>
@@ -73,10 +75,19 @@ td, th {
     
 
          <nav class="auto-style10">
+             <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
-           
+           </div>
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
+             <br />
              <br />
              <br />
              <br />
@@ -155,13 +166,7 @@ td, th {
 </body>
     
     </form>
-    <div>
-<footer style="margin: 100px auto 120px; color:black "  > 
-      Costal Bend Kidney Foundation<br />
-      <br />
-      &nbsp;<br />
-        </footer>
-        </div>
+
 
 </body>
 </html>
