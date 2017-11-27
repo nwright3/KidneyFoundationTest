@@ -4,9 +4,15 @@
     .auto-style11 {
         margin-left: 40px;
     }
-        .auto-style12 {
-            width: 923px;
-        }
+        .auto-style14 {
+        width: 924px;
+    }
+        .auto-style16 {
+        width: 1005px;
+        font-size: 20pt;
+        height: 72px;
+        float: left;
+    }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -94,23 +100,26 @@
             <asp:Parameter Name="Admin_ID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <p class="auto-style12">
-    <br />
+    <p class="auto-style14">
+        <strong>&nbsp;Admin Controls</strong><br />
   
 
+            <br />
+                <asp:Button ID="User_Control" runat="server" Text="User Controls" OnClick="User_Controls" Width="160px" Height="26px" />
             
-                <asp:Button ID="User_Control" runat="server" Text="User Controls" OnClick="User_Controls" Width="160px" />
-            
-        &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Admin_Control" runat="server" Text="Admin Controls" Width="160px" OnClick="Admin_Controls" />
-                   &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Event_Control" runat="server" Text="Event Controls" Width="160px" OnClick="Event_Controls"  />
+        &nbsp;&nbsp;
+                <asp:Button ID="Admin_Control" runat="server" Text="Admin Controls" Width="160px" OnClick="Admin_Controls" Height="26px" />
+                   &nbsp;&nbsp;
+                <asp:Button ID="Event_Control" runat="server" Text="Event Controls" Width="160px" OnClick="Event_Controls" Height="26px"  />
         
-     &nbsp;&nbsp;&nbsp;      
+     &nbsp;&nbsp;      
           <asp:Button ID="Slide_Shw" runat="server" Text="Slide Show" Width="160px" OnClick="Slide_Show" Height="26px" />
-        &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="EMl_Btn" runat="server" Text="E-mail" Width="160px" OnClick="EMail_Btn" />
-            </p>
+        &nbsp;&nbsp;
+                <asp:Button ID="EMl_Btn" runat="server" Text="E-mail" Width="160px" OnClick="EMail_Btn" Height="26px" />
+    <br>        
+    </p>
+<p class="auto-style16">
+    &nbsp;</p>
 
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" DataSourceID="SqlDataSource1" Visible="False" Width="732px" AutoGenerateColumns="False" DataKeyNames="User_ID" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
