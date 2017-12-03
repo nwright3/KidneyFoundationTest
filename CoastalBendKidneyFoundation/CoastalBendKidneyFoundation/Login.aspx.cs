@@ -23,6 +23,9 @@ namespace CoastalBendKidneyFoundation
                     chkRemember.Checked = true;
                 }
             }
+
+            Session["LoginUser"] = null;
+            Session["LoginAdmin"] = null;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -64,12 +67,15 @@ namespace CoastalBendKidneyFoundation
                 {
                     pass = true;
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Welcome User!')", true);
+                    Session["LoginUser"] = true;
+                    Session["LoginUsername"] = txtUsername.Text;
                 }
 
                 else if(resultAdmin == 1)
                 {
                     pass = true;
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Welcome Admin!')", true);
+                    Session["LoginAdmin"] = true;
                 }
 
                 else
@@ -106,10 +112,6 @@ namespace CoastalBendKidneyFoundation
 
                 // Trimming to make sure no whitespaces are kept
                 Response.Cookies["UserName"].Value = txtUsername.Text.Trim();
-
-                Session["Logout"] = "false";
-                Session["Username"] = txtUsername.Text;
-                Session["Login"] = "true";
                 Response.Redirect("Home.aspx");
             }
         }

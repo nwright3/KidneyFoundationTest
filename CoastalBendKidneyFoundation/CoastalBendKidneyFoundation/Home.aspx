@@ -15,7 +15,7 @@
                 <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick">
                 </asp:Timer>
                 <asp:Image ID="Image1" Height="300px" Width="1000px" runat="server" />
-                <asp:Label ID="name" runat="server" Visible="false"></asp:Label>
+                <asp:Label ID="name" runat="server" Visible="true"></asp:Label>
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
@@ -56,6 +56,17 @@ and stage special events to further develop donor relationships with foundations
                 We are also members of the South Texas Planned Giving Council sponsored by the Coastal Bend Community Foundation. It is our goal to widen our networking system to continue
                 to better serve South Texas.
             </p>
+
+            <div>
+                <h3>Contact</h3>
+                <div><asp:TextBox ID="txtName" runat="server" placeHolder="Name"></asp:TextBox></div>
+                <div><asp:TextBox ID="txtEmail" runat="server" placeHolder="Email" TextMode="Email"></asp:TextBox></div>
+                <div><asp:TextBox ID="txtSubject" runat="server" placeHolder="Subject"></asp:TextBox></div>
+                <div><asp:TextBox ID="txtBody" runat="server" placeHolder="Body" TextMode="MultiLine"></asp:TextBox></div>
+                <div>
+                    <asp:Button ID="btnSend" runat="server" Text="Send" OnClick="btnSend_Click" /></div>
+            </div>
+
         </article>
     </div>
 

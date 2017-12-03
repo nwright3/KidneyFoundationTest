@@ -3,8 +3,10 @@
 }
 
 h3 {
-    font-size:50px;
-    color:#170A66;
+    font-size: 50px;
+    color: #170A66;
+    border-bottom: 4px solid #170A66;
+    padding: 25px;
 }
 
 .main {
@@ -20,7 +22,7 @@ p {
     line-height: 200%;
     font-size: 20px;
     text-indent: 50px;
-    padding: 30px;
+    padding: 15px;
 }
 
 .gallery {

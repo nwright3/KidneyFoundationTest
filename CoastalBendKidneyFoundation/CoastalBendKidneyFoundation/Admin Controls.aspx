@@ -13,38 +13,18 @@
         height: 72px;
         float: left;
     }
+        .auto-style17 {
+            font-family: "Segoe UI";
+            font-size: 15px;
+            background-color: #F0F0F0;
+        }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
         
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:InternetProgrammingTestConnectionString %>" DeleteCommand="DELETE FROM [User] WHERE [User_ID] = @User_ID" InsertCommand="INSERT INTO [User] ([User_Username], [User_Password], [User_Email], [User_FName], [User_LName], [User_Country]) VALUES (@User_Username, @User_Password, @User_Email, @User_FName, @User_LName, @User_Country)" SelectCommand="SELECT * FROM [User]" UpdateCommand="UPDATE [User] SET [User_Username] = @User_Username, [User_Password] = @User_Password, [User_Email] = @User_Email, [User_FName] = @User_FName, [User_LName] = @User_LName, [User_Country] = @User_Country WHERE [User_ID] = @User_ID">
-    <DeleteParameters>
-        <asp:Parameter Name="User_ID" Type="Int32" />
-    </DeleteParameters>
-    <InsertParameters>
-        <asp:Parameter Name="User_Username" Type="String" />
-        <asp:Parameter Name="User_Password" Type="String" />
-        <asp:Parameter Name="User_Email" Type="String" />
-        <asp:Parameter Name="User_FName" Type="String" />
-        <asp:Parameter Name="User_LName" Type="String" />
-        <asp:Parameter Name="User_Country" Type="String" />
-    </InsertParameters>
-    <UpdateParameters>
-        <asp:Parameter Name="User_Username" Type="String" />
-        <asp:Parameter Name="User_Password" Type="String" />
-        <asp:Parameter Name="User_Email" Type="String" />
-        <asp:Parameter Name="User_FName" Type="String" />
-        <asp:Parameter Name="User_LName" Type="String" />
-        <asp:Parameter Name="User_Country" Type="String" />
-        <asp:Parameter Name="User_ID" Type="Int32" />
-    </UpdateParameters>
-</asp:SqlDataSource>
-  
-
-            
-    <asp:SqlDataSource ID="EventConnection" runat="server" ConnectionString="<%$ ConnectionStrings:InternetProgrammingTestConnectionString %>" SelectCommand="SELECT * FROM [Event]" DeleteCommand="DELETE FROM [Event] WHERE [Event_Id] = @Event_Id" InsertCommand="INSERT INTO [Event] ([Event_Name], [Event_Date], [Event_Place], [Event_Description], [Event_Attendance]) VALUES (@Event_Name, @Event_Date, @Event_Place, @Event_Description, @Event_Attendance)" UpdateCommand="UPDATE [Event] SET [Event_Name] = @Event_Name, [Event_Date] = @Event_Date, [Event_Place] = @Event_Place, [Event_Description] = @Event_Description, [Event_Attendance] = @Event_Attendance WHERE [Event_Id] = @Event_Id">
+    <span class="auto-style17">32423</span><asp:SqlDataSource ID="EventConnection" runat="server" ConnectionString="<%$ ConnectionStrings:InternetProgrammingTestConnectionString %>" SelectCommand="SELECT * FROM [Event]" DeleteCommand="DELETE FROM [Event] WHERE [Event_Id] = @Event_Id" InsertCommand="INSERT INTO [Event] ([Event_Name], [Event_Date], [Event_Place], [Event_Description], [Event_Attendance]) VALUES (@Event_Name, @Event_Date, @Event_Place, @Event_Description, @Event_Attendance)" UpdateCommand="UPDATE [Event] SET [Event_Name] = @Event_Name, [Event_Date] = @Event_Date, [Event_Place] = @Event_Place, [Event_Description] = @Event_Description, [Event_Attendance] = @Event_Attendance WHERE [Event_Id] = @Event_Id">
         <DeleteParameters>
             <asp:Parameter Name="Event_Id" Type="Int32" />
         </DeleteParameters>
