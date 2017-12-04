@@ -27,7 +27,7 @@
                 To facilitate programs, services and educational opportunities designed specifically to serve the needs of kidney disease patients in our community to include 
                 the counties of Nueces, Jim Wells, Live Oak, Bee, Refugio, Aransas, San Patricio, Kleberg, Brooks and Kenedy.
             </p>
-            <h3>Goals</h3>
+            <h3 class="goals">Goals</h3>
             <p>
                 Our goals are to expand public awareness about kidney disease and the need for organ donation through public education,
 and provide educational opportunities for health care professionals,
@@ -57,17 +57,23 @@ and stage special events to further develop donor relationships with foundations
                 to better serve South Texas.
             </p>
 
-            <div>
-                <h3>Contact</h3>
-                <div><asp:TextBox ID="txtName" runat="server" placeHolder="Name"></asp:TextBox></div>
-                <div><asp:TextBox ID="txtEmail" runat="server" placeHolder="Email" TextMode="Email"></asp:TextBox></div>
-                <div><asp:TextBox ID="txtSubject" runat="server" placeHolder="Subject"></asp:TextBox></div>
-                <div><asp:TextBox ID="txtBody" runat="server" placeHolder="Body" TextMode="MultiLine"></asp:TextBox></div>
-                <div>
-                    <asp:Button ID="btnSend" runat="server" Text="Send" OnClick="btnSend_Click" /></div>
-            </div>
+            <h3 class="contactTitle">Contact Us</h3>
 
+            <div class="contact" id="contact">
+                <div><asp:TextBox ID="txtName" runat="server" placeHolder="Name" CssClass="textboxes"></asp:TextBox></div>
+                <div><asp:TextBox ID="txtEmail" runat="server" placeHolder="Email" TextMode="Email" CssClass="textboxes"></asp:TextBox></div>
+                <div><asp:TextBox ID="txtSubject" runat="server" placeHolder="Subject" CssClass="textboxes"></asp:TextBox></div>
+                <div><asp:TextBox ID="txtBody" runat="server" placeHolder="Body" TextMode="MultiLine" CssClass="comment"></asp:TextBox></div>
+                <div>
+                    <asp:Button ID="btnSend" runat="server" Text="Send" OnClick="btnSend_Click" CssClass="send"/></div>
+            </div>
         </article>
+    </div>
+
+    <div>
+
+        <footer>Coppyright @ CostalbendKidneyFoundation</footer>
+
     </div>
 
 </asp:Content>
