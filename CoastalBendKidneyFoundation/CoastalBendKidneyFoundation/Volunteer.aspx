@@ -9,6 +9,8 @@
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" SelectCommand="SELECT * FROM [Comments]"></asp:SqlDataSource>
     <br />
 
+    <link rel="stylesheet" href="/style/Home.css" type="text/css" runat="server" />
+
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <style>
@@ -80,17 +82,18 @@ body {
         margin-left: 190px;
     }
     .auto-style7 {
-        height: 331px;
-        width: 712px;
+        height: 343px;
+        width: 923px;
         float: right;
         margin-left: 0px;
     }
     .auto-style8 {
         float: left;
+        margin-left: 0px;
     }
     .auto-style9 {
         margin-left: 0px;
-        margin-right: 272px;
+        margin-right: 302px;
         margin-bottom: 0px;
     }
     .auto-style10 {
@@ -100,6 +103,10 @@ body {
         margin-left: 763px;
         margin-right: 277px;
         margin-bottom: 4px;
+    }
+    .auto-style12 {
+        margin-top: 292px;
+        margin-bottom: 0px;
     }
 </style>
     <br />
@@ -184,26 +191,13 @@ body {
         </asp:Calendar>
         <br />
         </div>
-        <br />
+        <asp:Button ID="bttAttending" runat="server" CssClass="auto-style12" Height="44px" OnClick="bttAttending_Click" Text="I'm Attending!" Width="154px" ValidateRequestMode="Disabled" />
     <br />
     <br />
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-    <br />
-
-    <br />
-    <asp:Button ID="bttAttending" runat="server" Height="44px" OnClick="bttAttending_Click" Text="I'm Attending!" Width="154px" />
+    <div>
+        <h3 class="goals">Comments</h3>
+    </div>
     <br />
     <br />
     <div class="auto-style10">

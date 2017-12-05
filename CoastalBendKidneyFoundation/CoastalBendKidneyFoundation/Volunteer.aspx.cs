@@ -64,7 +64,8 @@ namespace CoastalBendKidneyFoundation
 
         protected void bttAttending_Click(object sender, EventArgs e)
         {
-            bttAttending.Visible = false;
+            bttAttending.Enabled = false;
+            bttAttending.Text = "Attending!";
 
             SqlConnection con = new SqlConnection(strConnString);
             con.Open();
