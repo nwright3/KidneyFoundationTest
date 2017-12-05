@@ -9,6 +9,8 @@
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" SelectCommand="SELECT * FROM [Images]"></asp:SqlDataSource>
 
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="1" />
+
     <div class="gallery">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
@@ -60,12 +62,20 @@ and stage special events to further develop donor relationships with foundations
             <h3 class="contactTitle">Contact Us</h3>
 
             <div class="contact" id="contact">
-                <div><asp:TextBox ID="txtName" runat="server" placeHolder="Name" CssClass="textboxes"></asp:TextBox></div>
-                <div><asp:TextBox ID="txtEmail" runat="server" placeHolder="Email" TextMode="Email" CssClass="textboxes"></asp:TextBox></div>
-                <div><asp:TextBox ID="txtSubject" runat="server" placeHolder="Subject" CssClass="textboxes"></asp:TextBox></div>
-                <div><asp:TextBox ID="txtBody" runat="server" placeHolder="Body" TextMode="MultiLine" CssClass="comment"></asp:TextBox></div>
+                <div><asp:TextBox ID="txtName" runat="server" placeHolder="Name" CssClass="textboxes"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtName" Display="Dynamic" ErrorMessage="Name is a required field." ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
+                </div>
+                <div><asp:TextBox ID="txtEmail" runat="server" placeHolder="Email" TextMode="Email" CssClass="textboxes"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Email is a required field." ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
+                </div>
+                <div><asp:TextBox ID="txtSubject" runat="server" placeHolder="Subject" CssClass="textboxes"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtSubject" Display="Dynamic" ErrorMessage="Subject is a required field." ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
+                </div>
+                <div><asp:TextBox ID="txtBody" runat="server" placeHolder="Body" TextMode="MultiLine" CssClass="comment"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtBody" Display="Dynamic" ErrorMessage="Body is a required field." ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
+                </div>
                 <div>
-                    <asp:Button ID="btnSend" runat="server" Text="Send" OnClick="btnSend_Click" CssClass="send"/></div>
+                    <asp:Button ID="btnSend" runat="server" Text="Send" OnClick="btnSend_Click" CssClass="send" ValidationGroup="1"/></div>
             </div>
         </article>
     </div>

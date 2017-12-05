@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin Controls.aspx" />
+    <Content Include="AdminContact.aspx" />
     <Content Include="AdminManageSlideshow.aspx" />
     <Content Include="AdminManageUser.aspx" />
     <Content Include="Contact.aspx" />
@@ -127,6 +128,7 @@
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Signup.aspx" />
+    <Content Include="style\AdminConsole.css" />
     <Content Include="style\Login.css" />
     <Content Include="style\MasterPageStyle.css" />
     <Content Include="Volunteer.aspx" />
@@ -146,6 +148,13 @@
     </Compile>
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminContact.aspx.cs">
+      <DependentUpon>AdminContact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminContact.aspx.designer.cs">
+      <DependentUpon>AdminContact.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminManageSlideshow.aspx.cs">
       <DependentUpon>AdminManageSlideshow.aspx</DependentUpon>
