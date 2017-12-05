@@ -101,14 +101,7 @@ namespace CoastalBendKidneyFoundation
             if (pass)
             {
                 // Remember what the user type in
-                if (chkRemember.Checked)
-                {
-                    Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(30);
-                }
-                else
-                {
-                    Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(-1);
-                }
+                Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(30);
 
                 // Trimming to make sure no whitespaces are kept
                 Response.Cookies["UserName"].Value = txtUsername.Text.Trim();
