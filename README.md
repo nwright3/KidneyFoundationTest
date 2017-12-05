@@ -1,6 +1,6 @@
 # Coastal Bend Kidney Foundation
 
-One Paragraph of project description goes here
+The Coastal Bend Kidney Foundation is a non-profit organization dedicated to assisting the South Texas community by providing the testing, tools, and resources to accommodate those with varying levels of kidney disease or failure.
 
 ## Getting Started
 
