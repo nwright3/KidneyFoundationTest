@@ -51,8 +51,6 @@ namespace CoastalBendKidneyFoundation
             com = new SqlCommand(str, con);
             com.ExecuteNonQuery();
             con.Close();
-
-
         }
     }
 }
