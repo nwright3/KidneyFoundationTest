@@ -245,7 +245,7 @@ body {
         <br />
         <asp:TextBox ID="txtComment" runat="server" Height="106px" Width="325px"></asp:TextBox>
         <br />
-        <asp:Button ID="Button1" runat="server" Height="38px" Text="Submit" Width="76px" />
+        <asp:Button ID="Button1" runat="server" Height="38px" Text="Submit" Width="76px" OnClick="Button1_Click" />
         <br />
         <br />
         <br />
