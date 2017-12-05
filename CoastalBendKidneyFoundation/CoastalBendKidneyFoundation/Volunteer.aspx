@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:KidneyFoundationConnectionString %>" DeleteCommand="DELETE FROM [Events] WHERE [Event_ID] = @Event_ID" InsertCommand="INSERT INTO [Events] ([Event_ID], [Event_Name], [Event_Date], [Event_Place], [Event_Description]) VALUES (@Event_ID, @Event_Name, @Event_Date, @Event_Place, @Event_Description)" SelectCommand="SELECT * FROM [Events]" UpdateCommand="UPDATE [Events] SET [Event_Name] = @Event_Name, [Event_Date] = @Event_Date, [Event_Place] = @Event_Place, [Event_Description] = @Event_Description WHERE [Event_ID] = @Event_ID">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" DeleteCommand="DELETE FROM [Event] WHERE [Event_ID] = @Event_ID" InsertCommand="INSERT INTO [Event] ([Event_ID], [Event_Name], [Event_Date], [Event_Place], [Event_Description]) VALUES (@Event_ID, @Event_Name, @Event_Date, @Event_Place, @Event_Description)" SelectCommand="SELECT * FROM [Event]" UpdateCommand="UPDATE [Event] SET [Event_Name] = @Event_Name, [Event_Date] = @Event_Date, [Event_Place] = @Event_Place, [Event_Description] = @Event_Description WHERE [Event_ID] = @Event_ID">
         <DeleteParameters>
             <asp:Parameter Name="Event_ID" Type="Int32" />
         </DeleteParameters>
@@ -23,7 +23,7 @@
         </UpdateParameters>
     </asp:SqlDataSource>
 
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:KidneyFoundationConnectionString %>" SelectCommand="SELECT * FROM [Comments]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" SelectCommand="SELECT * FROM [Comments]"></asp:SqlDataSource>
     <br />
 
 <meta charset="utf-8"/>
@@ -124,7 +124,7 @@ body {
         <asp:FormView ID="FormView1" runat="server" AllowPaging="True" CellPadding="4" DataKeyNames="Event_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" Height="336px" Width="1109px" CssClass="auto-style8">
             <EditItemTemplate>
                 Event_ID:
-                <asp:Label ID="Event_IDLabel1" runat="server" Text='<%# Eval("Event_ID") %>' />
+                <asp:Label ID="Event_IDLabel1" runat="server" Text='<%# Eval("Event_Id") %>' />
                 <br />
                 Event_Name:
                 <asp:TextBox ID="Event_NameTextBox" runat="server" Text='<%# Bind("Event_Name") %>' />
@@ -146,7 +146,7 @@ body {
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <InsertItemTemplate>
                 Event_ID:
-                <asp:TextBox ID="Event_IDTextBox" runat="server" Text='<%# Bind("Event_ID") %>' />
+                <asp:TextBox ID="Event_IDTextBox" runat="server" Text='<%# Bind("Event_Id") %>' />
                 <br />
                 Event_Name:
                 <asp:TextBox ID="Event_NameTextBox" runat="server" Text='<%# Bind("Event_Name") %>' />
@@ -164,7 +164,7 @@ body {
                 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
             </InsertItemTemplate>
             <ItemTemplate>
-                <asp:Label ID="Event_IDLabel" runat="server" Text='<%# Eval("Event_ID") %>' Visible="False" />
+                <asp:Label ID="Event_IDLabel" runat="server" Text='<%# Eval("Event_Id") %>' Visible="False" />
                 <br />
                 <asp:Label ID="Event_NameLabel" runat="server" Text='<%# Bind("Event_Name") %>' />
                 <br />
