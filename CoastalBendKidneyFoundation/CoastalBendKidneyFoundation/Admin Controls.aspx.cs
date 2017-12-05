@@ -13,7 +13,8 @@ namespace CoastalBendKidneyFoundation
     public partial class WebForm2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        { /* No need to use following statements since all components
+            visibility set hidden by default
             FileUpload1.Visible = false;
             btnUpload.Visible = false;
             ValidationSummary1.Visible = false;
@@ -27,13 +28,13 @@ namespace CoastalBendKidneyFoundation
             EventUpdateLabel.Visible = false;
             EventTable.Visible = false;
 
-            CollapseUserControl.Visible = false;
-            CollapseAdminControl.Visible = false;
-            CollapseEmail.Visible = false;
-            CollapseSlideShow.Visible = false;
-            CollapseEventControl.Visible = false;
+            //CollapseUserControl.Visible = false;
+            //CollapseAdminControl.Visible = false;
+            //CollapseEmail.Visible = false;
+            //CollapseSlideShow.Visible = false;
+            //CollapseEventControl.Visible = false;
 
-
+            */
         }
         protected void User_Controls(object sender, EventArgs e)
         {
