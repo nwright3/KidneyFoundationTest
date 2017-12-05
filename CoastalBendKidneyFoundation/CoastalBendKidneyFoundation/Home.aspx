@@ -14,7 +14,7 @@
     <div class="gallery">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick">
+                <asp:Timer ID="Timer1" runat="server" Interval="2500" OnTick="Timer1_Tick">
                 </asp:Timer>
                 <asp:Image ID="Image1" Height="300px" Width="1000px" runat="server" />
                 <asp:Label ID="name" runat="server" Visible="true"></asp:Label>

@@ -3,24 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" DeleteCommand="DELETE FROM [Event] WHERE [Event_ID] = @Event_ID" InsertCommand="INSERT INTO [Event] ([Event_ID], [Event_Name], [Event_Date], [Event_Place], [Event_Description]) VALUES (@Event_ID, @Event_Name, @Event_Date, @Event_Place, @Event_Description)" SelectCommand="SELECT * FROM [Event]" UpdateCommand="UPDATE [Event] SET [Event_Name] = @Event_Name, [Event_Date] = @Event_Date, [Event_Place] = @Event_Place, [Event_Description] = @Event_Description WHERE [Event_ID] = @Event_ID">
-        <DeleteParameters>
-            <asp:Parameter Name="Event_ID" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="Event_ID" Type="Int32" />
-            <asp:Parameter Name="Event_Name" Type="String" />
-            <asp:Parameter Name="Event_Date" Type="String" />
-            <asp:Parameter Name="Event_Place" Type="String" />
-            <asp:Parameter Name="Event_Description" Type="String" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="Event_Name" Type="String" />
-            <asp:Parameter Name="Event_Date" Type="String" />
-            <asp:Parameter Name="Event_Place" Type="String" />
-            <asp:Parameter Name="Event_Description" Type="String" />
-            <asp:Parameter Name="Event_ID" Type="Int32" />
-        </UpdateParameters>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" SelectCommand="SELECT * FROM [Event]">
     </asp:SqlDataSource>
 
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" SelectCommand="SELECT * FROM [Comments]"></asp:SqlDataSource>
@@ -121,10 +104,10 @@ body {
 </style>
     <br />
     <div class="auto-style6">
-        <asp:FormView ID="FormView1" runat="server" AllowPaging="True" CellPadding="4" DataKeyNames="Event_ID" DataSourceID="SqlDataSource1" ForeColor="#333333" Height="336px" Width="1109px" CssClass="auto-style8">
+        <asp:FormView ID="FormView1" runat="server" AllowPaging="True" CellPadding="4" DataKeyNames="Event_Id" DataSourceID="SqlDataSource1" ForeColor="#333333" Height="336px" Width="1109px" CssClass="auto-style8">
             <EditItemTemplate>
-                Event_ID:
-                <asp:Label ID="Event_IDLabel1" runat="server" Text='<%# Eval("Event_Id") %>' />
+                Event_Id:
+                <asp:Label ID="Event_IdLabel1" runat="server" Text='<%# Eval("Event_Id") %>' />
                 <br />
                 Event_Name:
                 <asp:TextBox ID="Event_NameTextBox" runat="server" Text='<%# Bind("Event_Name") %>' />
@@ -137,6 +120,9 @@ body {
                 <br />
                 Event_Description:
                 <asp:TextBox ID="Event_DescriptionTextBox" runat="server" Text='<%# Bind("Event_Description") %>' />
+                <br />
+                Event_Attendance:
+                <asp:TextBox ID="Event_AttendanceTextBox" runat="server" Text='<%# Bind("Event_Attendance") %>' />
                 <br />
                 <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
                 &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
@@ -145,9 +131,6 @@ body {
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <InsertItemTemplate>
-                Event_ID:
-                <asp:TextBox ID="Event_IDTextBox" runat="server" Text='<%# Bind("Event_Id") %>' />
-                <br />
                 Event_Name:
                 <asp:TextBox ID="Event_NameTextBox" runat="server" Text='<%# Bind("Event_Name") %>' />
                 <br />
@@ -160,11 +143,13 @@ body {
                 Event_Description:
                 <asp:TextBox ID="Event_DescriptionTextBox" runat="server" Text='<%# Bind("Event_Description") %>' />
                 <br />
+                Event_Attendance:
+                <asp:TextBox ID="Event_AttendanceTextBox" runat="server" Text='<%# Bind("Event_Attendance") %>' />
+                <br />
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
                 &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
             </InsertItemTemplate>
             <ItemTemplate>
-                <asp:Label ID="Event_IDLabel" runat="server" Text='<%# Eval("Event_Id") %>' Visible="False" />
                 <br />
                 <asp:Label ID="Event_NameLabel" runat="server" Text='<%# Bind("Event_Name") %>' />
                 <br />
@@ -177,9 +162,12 @@ body {
                 <br />
                 <asp:Label ID="Event_DescriptionLabel" runat="server" Text='<%# Bind("Event_Description") %>' />
                 <br />
-                <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
-                &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
-                &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
+                <br />
+                <br />
+                <br />
+                Attendance:
+                <asp:Label ID="Event_AttendanceLabel" runat="server" Text='<%# Bind("Event_Attendance") %>' />
+                <br />
             </ItemTemplate>
             <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
@@ -215,6 +203,8 @@ body {
     <br />
 
     <br />
+    <asp:Button ID="bttAttending" runat="server" Height="44px" OnClick="bttAttending_Click" Text="I'm Attending!" Width="154px" />
+    <br />
     <br />
     <div class="auto-style10">
 
@@ -245,7 +235,7 @@ body {
         <br />
         <asp:TextBox ID="txtComment" runat="server" Height="106px" Width="325px"></asp:TextBox>
         <br />
-        <asp:Button ID="Button1" runat="server" Height="38px" Text="Submit" Width="76px" />
+        <asp:Button ID="Button1" runat="server" Height="38px" Text="Submit" Width="76px" OnClick="Button1_Click" />
         <br />
         <br />
         <br />
