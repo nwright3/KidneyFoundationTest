@@ -2,8 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:sqldatasource ID="userconnection" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString %>" SelectCommand="SELECT * FROM [Admin]"></asp:sqldatasource>
-    <asp:SqlDataSource ID="adminconnection" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString %>" SelectCommand="SELECT * FROM [Admin]"></asp:SqlDataSource>
+    <asp:sqldatasource ID="userconnection" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" SelectCommand="SELECT * FROM [User]"></asp:sqldatasource>
+    <asp:SqlDataSource ID="adminconnection" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" SelectCommand="SELECT * FROM [Admin]"></asp:SqlDataSource>
 
     <link rel="stylesheet" href="/style/Login.css" type="text/css" runat="server"/>
 
@@ -14,10 +14,10 @@
             <h2>Login</h2>
             <div>
                 <asp:TextBox ID="txtUsername" runat="server" placeHolder="Username" CssClass="textboxes" ></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Username field is required." ControlToValidate="txtUsername" ForeColor="Red" ValidationGroup="login">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Username field is required." ControlToValidate="txtUsername" ForeColor="Red" ValidationGroup="login" Display="Dynamic">*</asp:RequiredFieldValidator>
                 <br />
                 <asp:TextBox ID="txtPassword" runat="server" placeHolder="Password" TextMode="Password" CssClass="textboxes" ></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Password field is required." ControlToValidate="txtPassword" ForeColor="Red" ValidationGroup="login">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Password field is required." ControlToValidate="txtPassword" ForeColor="Red" ValidationGroup="login" Display="Dynamic">*</asp:RequiredFieldValidator>
             </div>
 
             <br />

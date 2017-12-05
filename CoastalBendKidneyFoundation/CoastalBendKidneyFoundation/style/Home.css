@@ -3,9 +3,13 @@
 }
 
 h3 {
-    font-size:50px;
-    color:#170A66;
+    font-size: 50px;
+    color: #170A66;
+    border-bottom: 4px solid #170A66;
+    padding: 25px;
 }
+
+
 
 .main {
     display: flex;
@@ -20,7 +24,7 @@ p {
     line-height: 200%;
     font-size: 20px;
     text-indent: 50px;
-    padding: 30px;
+    padding: 15px;
 }
 
 .gallery {
@@ -33,13 +37,42 @@ p {
 }
 
 footer {
-    margin: 0;
     text-align:center;
-    position: absolute;
-    bottom: 0;
-    width: 98.45%;
+    width: 98%;
     background-color: #170A66;
     font-size: 20px;
     padding: 15px;
     color: white;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+}
+
+.textboxes {
+    padding: 10px;
+    margin: 5px;
+    width: 25%;
+}
+
+.comment {
+    padding: 10px;
+    margin: 5px;
+    width: 50%;
+    height: 100px;
+    font-size: 15px;
+}
+
+.send {
+    margin-top: 30px;
+    width: 12.5%;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    background-color: #170A66;
+    color: white;
+    border: none;
+    font-size: 15px;
 }

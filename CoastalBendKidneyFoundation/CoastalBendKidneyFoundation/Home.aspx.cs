@@ -7,11 +7,13 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Net.Mail;
 
 namespace CoastalBendKidneyFoundation
 {
     public partial class Home : System.Web.UI.Page
     {
+        private int x = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             // Checking to see if this is the users first time opening Home.aspx
@@ -29,7 +31,7 @@ namespace CoastalBendKidneyFoundation
         protected void Timer1_Tick(object sender, EventArgs e)
         {
             // Storing the current viewstate to i, then incrementing i and updating the viewstate
-            int i = (int) ViewState["ImageDisplayed"];
+            int i = (int)ViewState["ImageDisplayed"];
             i = i + 1;
             ViewState["ImageDisplayed"] = i;
 
@@ -40,7 +42,6 @@ namespace CoastalBendKidneyFoundation
             if(imageDataRow != null)
             {
                 Image1.ImageUrl = "~/images/" + imageDataRow["Img_Name"].ToString();
-                //name.Text = imageDataRow["Img_Name"].ToString();
             }
 
             // Otherwise, procede to SetImageUrl
@@ -69,7 +70,25 @@ namespace CoastalBendKidneyFoundation
 
             // Printing the url
             DataRow imageDataRow = ds.Tables["image"].Select().FirstOrDefault(x => x["Img_Order"].ToString() == "1");
-            Image1.ImageUrl = "~/=images/" + imageDataRow["Img_Name"].ToString();
+            Image1.ImageUrl = "~/images/" + imageDataRow["Img_Name"].ToString();
+        }
+
+        protected void btnSend_Click(object sender, EventArgs e)
+        {
+            MailMessage mailMessage = new MailMessage();
+            mailMessage.From = new MailAddress("hreeves983@gmail.com");
+            mailMessage.To.Add("hreeves983@gmail.com");
+            mailMessage.Subject = txtSubject.Text;
+            mailMessage.Body = "<b>Sender name: </b> " + txtName.Text
+                + "<br/>" + "<b>Sender Email: </b>" + txtEmail.Text + "<br/>"
+                + txtBody.Text;
+            mailMessage.IsBodyHtml = true;
+
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+            smtpClient.EnableSsl = true;
+            smtpClient.Credentials = new System.Net.NetworkCredential("hreeves983@gmail.com", "henry3434");
+            smtpClient.Send(mailMessage);
+
         }
     }
 }

@@ -4,8 +4,19 @@
     .auto-style11 {
         margin-left: 40px;
     }
-        .auto-style12 {
-            width: 923px;
+        .auto-style14 {
+        width: 924px;
+    }
+        .auto-style16 {
+        width: 1005px;
+        font-size: 20pt;
+        height: 72px;
+        float: left;
+    }
+        .auto-style17 {
+            font-family: "Segoe UI";
+            font-size: 15px;
+            background-color: #F0F0F0;
         }
         </style>
 </asp:Content>
@@ -13,32 +24,7 @@
 
 
         
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:InternetProgrammingTestConnectionString %>" DeleteCommand="DELETE FROM [User] WHERE [User_ID] = @User_ID" InsertCommand="INSERT INTO [User] ([User_Username], [User_Password], [User_Email], [User_FName], [User_LName], [User_Country]) VALUES (@User_Username, @User_Password, @User_Email, @User_FName, @User_LName, @User_Country)" SelectCommand="SELECT * FROM [User]" UpdateCommand="UPDATE [User] SET [User_Username] = @User_Username, [User_Password] = @User_Password, [User_Email] = @User_Email, [User_FName] = @User_FName, [User_LName] = @User_LName, [User_Country] = @User_Country WHERE [User_ID] = @User_ID">
-    <DeleteParameters>
-        <asp:Parameter Name="User_ID" Type="Int32" />
-    </DeleteParameters>
-    <InsertParameters>
-        <asp:Parameter Name="User_Username" Type="String" />
-        <asp:Parameter Name="User_Password" Type="String" />
-        <asp:Parameter Name="User_Email" Type="String" />
-        <asp:Parameter Name="User_FName" Type="String" />
-        <asp:Parameter Name="User_LName" Type="String" />
-        <asp:Parameter Name="User_Country" Type="String" />
-    </InsertParameters>
-    <UpdateParameters>
-        <asp:Parameter Name="User_Username" Type="String" />
-        <asp:Parameter Name="User_Password" Type="String" />
-        <asp:Parameter Name="User_Email" Type="String" />
-        <asp:Parameter Name="User_FName" Type="String" />
-        <asp:Parameter Name="User_LName" Type="String" />
-        <asp:Parameter Name="User_Country" Type="String" />
-        <asp:Parameter Name="User_ID" Type="Int32" />
-    </UpdateParameters>
-</asp:SqlDataSource>
-  
-
-            
-    <asp:SqlDataSource ID="EventConnection" runat="server" ConnectionString="<%$ ConnectionStrings:InternetProgrammingTestConnectionString %>" SelectCommand="SELECT * FROM [Event]" DeleteCommand="DELETE FROM [Event] WHERE [Event_Id] = @Event_Id" InsertCommand="INSERT INTO [Event] ([Event_Name], [Event_Date], [Event_Place], [Event_Description], [Event_Attendance]) VALUES (@Event_Name, @Event_Date, @Event_Place, @Event_Description, @Event_Attendance)" UpdateCommand="UPDATE [Event] SET [Event_Name] = @Event_Name, [Event_Date] = @Event_Date, [Event_Place] = @Event_Place, [Event_Description] = @Event_Description, [Event_Attendance] = @Event_Attendance WHERE [Event_Id] = @Event_Id">
+    <span class="auto-style17">32423</span><asp:SqlDataSource ID="EventConnection" runat="server" ConnectionString="<%$ ConnectionStrings:InternetProgrammingTestConnectionString %>" SelectCommand="SELECT * FROM [Event]" DeleteCommand="DELETE FROM [Event] WHERE [Event_Id] = @Event_Id" InsertCommand="INSERT INTO [Event] ([Event_Name], [Event_Date], [Event_Place], [Event_Description], [Event_Attendance]) VALUES (@Event_Name, @Event_Date, @Event_Place, @Event_Description, @Event_Attendance)" UpdateCommand="UPDATE [Event] SET [Event_Name] = @Event_Name, [Event_Date] = @Event_Date, [Event_Place] = @Event_Place, [Event_Description] = @Event_Description, [Event_Attendance] = @Event_Attendance WHERE [Event_Id] = @Event_Id">
         <DeleteParameters>
             <asp:Parameter Name="Event_Id" Type="Int32" />
         </DeleteParameters>
@@ -94,23 +80,26 @@
             <asp:Parameter Name="Admin_ID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <p class="auto-style12">
-    <br />
+    <p class="auto-style14">
+        <strong>&nbsp;Admin Controls</strong><br />
   
 
+            <br />
+                <asp:Button ID="User_Control" runat="server" Text="User Controls" OnClick="User_Controls" Width="160px" Height="26px" />
             
-                <asp:Button ID="User_Control" runat="server" Text="User Controls" OnClick="User_Controls" Width="160px" />
-            
-        &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Admin_Control" runat="server" Text="Admin Controls" Width="160px" OnClick="Admin_Controls" />
-                   &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Event_Control" runat="server" Text="Event Controls" Width="160px" OnClick="Event_Controls"  />
+        &nbsp;&nbsp;
+                <asp:Button ID="Admin_Control" runat="server" Text="Admin Controls" Width="160px" OnClick="Admin_Controls" Height="26px" />
+                   &nbsp;&nbsp;
+                <asp:Button ID="Event_Control" runat="server" Text="Event Controls" Width="160px" OnClick="Event_Controls" Height="26px"  />
         
-     &nbsp;&nbsp;&nbsp;      
+     &nbsp;&nbsp;      
           <asp:Button ID="Slide_Shw" runat="server" Text="Slide Show" Width="160px" OnClick="Slide_Show" Height="26px" />
-        &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="EMl_Btn" runat="server" Text="E-mail" Width="160px" OnClick="EMail_Btn" />
-            </p>
+        &nbsp;&nbsp;
+                <asp:Button ID="EMl_Btn" runat="server" Text="E-mail" Width="160px" OnClick="EMail_Btn" Height="26px" />
+    <br>        
+    </p>
+<p class="auto-style16">
+    &nbsp;</p>
 
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" DataSourceID="SqlDataSource1" Visible="False" Width="732px" AutoGenerateColumns="False" DataKeyNames="User_ID" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
