@@ -97,11 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin Controls.aspx" />
-    <Content Include="AdminContact.aspx" />
-    <Content Include="AdminManageSlideshow.aspx" />
-    <Content Include="AdminManageUser.aspx" />
     <Content Include="Contact.aspx" />
-    <Content Include="Event.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="images\firstOne.png" />
     <Content Include="images\test2.jpg" />
@@ -114,7 +110,6 @@
     </Content>
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Default.Master" />
-    <Content Include="Admin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -142,47 +137,12 @@
     <Compile Include="Admin Controls.aspx.designer.cs">
       <DependentUpon>Admin Controls.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin.Master.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin.Master.designer.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
-    </Compile>
-    <Compile Include="AdminContact.aspx.cs">
-      <DependentUpon>AdminContact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminContact.aspx.designer.cs">
-      <DependentUpon>AdminContact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminManageSlideshow.aspx.cs">
-      <DependentUpon>AdminManageSlideshow.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminManageSlideshow.aspx.designer.cs">
-      <DependentUpon>AdminManageSlideshow.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminManageUser.aspx.cs">
-      <DependentUpon>AdminManageUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminManageUser.aspx.designer.cs">
-      <DependentUpon>AdminManageUser.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Event.aspx.cs">
-      <DependentUpon>Event.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Event.aspx.designer.cs">
-      <DependentUpon>Event.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

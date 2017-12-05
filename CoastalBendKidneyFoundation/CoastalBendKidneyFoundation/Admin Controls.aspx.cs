@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,9 +16,23 @@ namespace CoastalBendKidneyFoundation
         {
             FileUpload1.Visible = false;
             btnUpload.Visible = false;
-            EmailUpdate.Visible = false;
+            ValidationSummary1.Visible = false;
+            GridView5.Visible = false;
+            txtSubject.Visible = false;
+            txtBody.Visible = false;
+            btnSend.Visible = false;
+            sendAll.Visible = false;
+            RequiredFieldValidator2.Visible = false;
+            RequiredFieldValidator3.Visible = false;
             EventUpdateLabel.Visible = false;
             EventTable.Visible = false;
+
+            CollapseUserControl.Visible = false;
+            CollapseAdminControl.Visible = false;
+            CollapseEmail.Visible = false;
+            CollapseSlideShow.Visible = false;
+            CollapseEventControl.Visible = false;
+
 
         }
         protected void User_Controls(object sender, EventArgs e)
@@ -164,14 +179,95 @@ namespace CoastalBendKidneyFoundation
 
         protected void EMail_Btn(object sender, EventArgs e)
         {
-            EmailUpdate.Visible = true;
+       
+            ValidationSummary1.Visible = true;
+            GridView5.Visible = true;
+            txtSubject.Visible = true;
+            txtBody.Visible = true;
+            btnSend.Visible = true;
+            sendAll.Visible = true;
+            RequiredFieldValidator2.Visible = true;
+            RequiredFieldValidator3.Visible = true;
             CollapseEmail.Visible = true;
         }
 
         protected void CollapseEmail_Click(object sender, EventArgs e)
         {
-            EmailUpdate.Visible = false;
+            ValidationSummary1.Visible = false;
+            GridView5.Visible = false;
+            txtSubject.Visible = false;
+            txtBody.Visible = false;
+            btnSend.Visible = false;
+            sendAll.Visible = false;
+            RequiredFieldValidator2.Visible = false;
+            RequiredFieldValidator3.Visible = false;
             CollapseEmail.Visible = false;
+        }
+
+
+        protected void btnSend_Click(object sender, EventArgs e)
+        {
+            int i = 0; // Counts the number of emails sent
+
+            // Send all
+            if (sendAll.Checked)
+            {
+                foreach (GridViewRow item in GridView1.Rows)
+                {
+                    string email = item.Cells[2].Text.Trim();
+                    MailMessage mailMessage = new MailMessage();
+                    mailMessage.From = new MailAddress("hreeves983@gmail.com");
+                    mailMessage.To.Add(email);
+                    mailMessage.Subject = txtSubject.Text;
+                    mailMessage.Body = txtBody.Text;
+
+                    // Setting up smtp environment and credentials
+                    SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                    smtpClient.EnableSsl = true;
+                    smtpClient.Credentials = new System.Net.NetworkCredential("hreeves983@gmail.com", "henry3434");
+                    smtpClient.Send(mailMessage);
+                    i++;
+                }
+            }
+
+            // Send selected
+            else
+            {
+                // Getting user emails
+                foreach (GridViewRow item in GridView1.Rows)
+                {
+                    if ((item.FindControl("chkSelect") as CheckBox).Checked)
+                    {
+                        string email = item.Cells[2].Text.Trim();
+                        MailMessage mailMessage = new MailMessage();
+                        mailMessage.From = new MailAddress("hreeves983@gmail.com");
+                        mailMessage.To.Add(email);
+                        mailMessage.Subject = txtSubject.Text;
+                        mailMessage.Body = txtBody.Text;
+
+                        // Setting up smtp environment and credentials
+                        SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                        smtpClient.EnableSsl = true;
+                        smtpClient.Credentials = new System.Net.NetworkCredential("hreeves983@gmail.com", "henry3434");
+                        smtpClient.Send(mailMessage);
+                        i++;
+                    }
+                }
+
+                // If no emails sent
+                if (i == 0)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this,
+                        this.GetType(), "alertMessage", "alert('You must select all or at least one checkbox in the gridview!')", true);
+                }
+
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this,
+                        this.GetType(), "alertMessage", "alert('Send successful" +
+                        "!')", true);
+                }
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Admin Controls.aspx.cs" Inherits="CoastalBendKidneyFoundation.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="Admin Controls.aspx.cs" Inherits="CoastalBendKidneyFoundation.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
     .auto-style11 {
@@ -13,18 +13,13 @@
         height: 72px;
         float: left;
     }
-        .auto-style17 {
-            font-family: "Segoe UI";
-            font-size: 15px;
-            background-color: #F0F0F0;
-        }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
         
-    <span class="auto-style17">32423</span><asp:SqlDataSource ID="EventConnection" runat="server" ConnectionString="<%$ ConnectionStrings:InternetProgrammingTestConnectionString %>" SelectCommand="SELECT * FROM [Event]" DeleteCommand="DELETE FROM [Event] WHERE [Event_Id] = @Event_Id" InsertCommand="INSERT INTO [Event] ([Event_Name], [Event_Date], [Event_Place], [Event_Description], [Event_Attendance]) VALUES (@Event_Name, @Event_Date, @Event_Place, @Event_Description, @Event_Attendance)" UpdateCommand="UPDATE [Event] SET [Event_Name] = @Event_Name, [Event_Date] = @Event_Date, [Event_Place] = @Event_Place, [Event_Description] = @Event_Description, [Event_Attendance] = @Event_Attendance WHERE [Event_Id] = @Event_Id">
+    <asp:SqlDataSource ID="EventConnection" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" SelectCommand="SELECT * FROM [Event]" DeleteCommand="DELETE FROM [Event] WHERE [Event_Id] = @Event_Id" InsertCommand="INSERT INTO [Event] ([Event_Name], [Event_Date], [Event_Place], [Event_Description], [Event_Attendance]) VALUES (@Event_Name, @Event_Date, @Event_Place, @Event_Description, @Event_Attendance)" UpdateCommand="UPDATE [Event] SET [Event_Name] = @Event_Name, [Event_Date] = @Event_Date, [Event_Place] = @Event_Place, [Event_Description] = @Event_Description, [Event_Attendance] = @Event_Attendance WHERE [Event_Id] = @Event_Id">
         <DeleteParameters>
             <asp:Parameter Name="Event_Id" Type="Int32" />
         </DeleteParameters>
@@ -44,7 +39,7 @@
             <asp:Parameter Name="Event_Id" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:InternetProgrammingTestConnectionString %>" DeleteCommand="DELETE FROM [Images] WHERE [Img_Id] = @Img_Id" InsertCommand="INSERT INTO [Images] ([Img_Name], [Img_Order]) VALUES (@Img_Name, @Img_Order)" SelectCommand="SELECT * FROM [Images]" UpdateCommand="UPDATE [Images] SET [Img_Name] = @Img_Name, [Img_Order] = @Img_Order WHERE [Img_Id] = @Img_Id">
+<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" DeleteCommand="DELETE FROM [Images] WHERE [Img_Id] = @Img_Id" InsertCommand="INSERT INTO [Images] ([Img_Name], [Img_Order]) VALUES (@Img_Name, @Img_Order)" SelectCommand="SELECT * FROM [Images]" UpdateCommand="UPDATE [Images] SET [Img_Name] = @Img_Name, [Img_Order] = @Img_Order WHERE [Img_Id] = @Img_Id">
     <DeleteParameters>
         <asp:Parameter Name="Img_Id" Type="Int32" />
     </DeleteParameters>
@@ -58,7 +53,7 @@
         <asp:Parameter Name="Img_Id" Type="Int32" />
     </UpdateParameters>
 </asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:InternetProgrammingTestConnectionString %>" DeleteCommand="DELETE FROM [Admin] WHERE [Admin_ID] = @Admin_ID" InsertCommand="INSERT INTO [Admin] ([Admin_Username], [Admin_Password], [Admin_Email], [Admin_FName], [Admin_LName], [Admin_Country]) VALUES (@Admin_Username, @Admin_Password, @Admin_Email, @Admin_FName, @Admin_LName, @Admin_Country)" SelectCommand="SELECT * FROM [Admin]" UpdateCommand="UPDATE [Admin] SET [Admin_Username] = @Admin_Username, [Admin_Password] = @Admin_Password, [Admin_Email] = @Admin_Email, [Admin_FName] = @Admin_FName, [Admin_LName] = @Admin_LName, [Admin_Country] = @Admin_Country WHERE [Admin_ID] = @Admin_ID">
+    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" DeleteCommand="DELETE FROM [Admin] WHERE [Admin_ID] = @Admin_ID" InsertCommand="INSERT INTO [Admin] ([Admin_Username], [Admin_Password], [Admin_Email], [Admin_FName], [Admin_LName], [Admin_Country]) VALUES (@Admin_Username, @Admin_Password, @Admin_Email, @Admin_FName, @Admin_LName, @Admin_Country)" SelectCommand="SELECT * FROM [Admin]" UpdateCommand="UPDATE [Admin] SET [Admin_Username] = @Admin_Username, [Admin_Password] = @Admin_Password, [Admin_Email] = @Admin_Email, [Admin_FName] = @Admin_FName, [Admin_LName] = @Admin_LName, [Admin_Country] = @Admin_Country WHERE [Admin_ID] = @Admin_ID">
         <DeleteParameters>
             <asp:Parameter Name="Admin_ID" Type="Int32" />
         </DeleteParameters>
@@ -80,6 +75,29 @@
             <asp:Parameter Name="Admin_ID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" SelectCommand="SELECT * FROM [User]" DeleteCommand="DELETE FROM [User] WHERE [User_ID] = @User_ID" InsertCommand="INSERT INTO [User] ([User_Username], [User_Password], [User_Email], [User_FName], [User_LName], [User_Country]) VALUES (@User_Username, @User_Password, @User_Email, @User_FName, @User_LName, @User_Country)" UpdateCommand="UPDATE [User] SET [User_Username] = @User_Username, [User_Password] = @User_Password, [User_Email] = @User_Email, [User_FName] = @User_FName, [User_LName] = @User_LName, [User_Country] = @User_Country WHERE [User_ID] = @User_ID">
+        <DeleteParameters>
+            <asp:Parameter Name="User_ID" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="User_Username" Type="String" />
+            <asp:Parameter Name="User_Password" Type="String" />
+            <asp:Parameter Name="User_Email" Type="String" />
+            <asp:Parameter Name="User_FName" Type="String" />
+            <asp:Parameter Name="User_LName" Type="String" />
+            <asp:Parameter Name="User_Country" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="User_Username" Type="String" />
+            <asp:Parameter Name="User_Password" Type="String" />
+            <asp:Parameter Name="User_Email" Type="String" />
+            <asp:Parameter Name="User_FName" Type="String" />
+            <asp:Parameter Name="User_LName" Type="String" />
+            <asp:Parameter Name="User_Country" Type="String" />
+            <asp:Parameter Name="User_ID" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CostalbendKidneyFoundationConnectionString3 %>" SelectCommand="SELECT [User_ID], [User_Email], [User_FName], [User_LName] FROM [User]"></asp:SqlDataSource>
     <p class="auto-style14">
         <strong>&nbsp;Admin Controls</strong><br />
   
@@ -101,7 +119,7 @@
 <p class="auto-style16">
     &nbsp;</p>
 
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" DataSourceID="SqlDataSource1" Visible="False" Width="732px" AutoGenerateColumns="False" DataKeyNames="User_ID" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" DataSourceID="SqlDataSource5" Visible="False" Width="600px" AutoGenerateColumns="False" DataKeyNames="User_ID" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True" Height="400px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
@@ -126,7 +144,7 @@
         </asp:GridView>
         <asp:Button ID="CollapseUserControl" runat="server" OnClick="CollapseUserControl_Click" Text="Collapse" Visible="False" Width="160px" />
                    <br />
-    <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Admin_ID" DataSourceID="SqlDataSource4" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Admin_ID" DataSourceID="SqlDataSource4" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="400px" Width="600px">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
@@ -152,7 +170,7 @@
             
     <asp:Button ID="CollapseAdminControl" runat="server" OnClick="CollapseAdminControl_Click" Text="Collapse" Visible="False" Width="160px" />
     <br />
-    <table id="EventTable" class="auto-style3 " style="visibility:visible" runat="server">
+    <table id="EventTable" class="auto-style3 " style="visibility:visible;float:left" runat="server">
         <tr>
             <td class="auto-style1">Event Name:</td>
             <td class="auto-style2">
@@ -189,7 +207,7 @@
         </tr>
     </table>
     <br>
-    <asp:GridView ID="GridView4" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Event_Id" DataSourceID="EventConnection" ForeColor="#333333" GridLines="None" Visible="False">
+    <asp:GridView ID="GridView4" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Event_Id" DataSourceID="EventConnection" ForeColor="#333333" GridLines="None" Visible="False" AllowSorting="True" Height="400px" Width="600px">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
@@ -214,10 +232,10 @@
     </br>
     <asp:Button ID="CollapseEventControl" runat="server" Text="Collapse" Visible="False" Width="160px" OnClick="CollapseEventControl_Click" />
 <br />
-    <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Img_Id" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" Visible="False">
+    <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Img_Id" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" Visible="False" AllowSorting="True" Height="400px" Width="600px">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
             <asp:BoundField DataField="Img_Id" HeaderText="Img_Id" InsertVisible="False" ReadOnly="True" SortExpression="Img_Id" />
             <asp:BoundField DataField="Img_Name" HeaderText="Img_Name" SortExpression="Img_Name" />
             <asp:BoundField DataField="Img_Order" HeaderText="Img_Order" SortExpression="Img_Order" />
@@ -240,7 +258,55 @@
 
                 <asp:Button ID="CollapseSlideShow" runat="server" OnClick="CollapseSlideShow_Click" Text="Collapse" Visible="False" Width="160px" />
     <br />
-    <asp:Label ID="EmailUpdate" runat="server" Text="EmailHasNotSetYet"></asp:Label>
+    <br />
+    <br />
+    <link rel="stylesheet" href="/style/AdminConsole.css" type="text/css" />
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="1" Visible="False" />
+
+    <div class="main">
+        <asp:GridView ID="GridView5" runat="server" AutoGenerateColumns="False" DataKeyNames="User_ID" DataSourceID="SqlDataSource1" AllowPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None" Height="400px" Width="600px">
+            <AlternatingRowStyle BackColor="White" />
+            <Columns>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:CheckBox ID="chkSelect" runat="server" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:BoundField DataField="User_ID" HeaderText="User_ID" InsertVisible="False" ReadOnly="True" SortExpression="User_ID" />
+                <asp:BoundField DataField="User_Email" HeaderText="User_Email" SortExpression="User_Email" />
+                <asp:BoundField DataField="User_FName" HeaderText="User_FName" SortExpression="User_FName" />
+                <asp:BoundField DataField="User_LName" HeaderText="User_LName" SortExpression="User_LName" />
+            </Columns>
+            <EditRowStyle BackColor="#2461BF" />
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EFF3FB" />
+            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+        </asp:GridView>
+    </div>
+
+    <div class="content">
+        <div>
+            <asp:TextBox ID="txtSubject" runat="server" placeHolder="Subject" CssClass="subject" Visible="False"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Subject is a required field." ControlToValidate="txtSubject" Display="Dynamic" ForeColor="Red" ValidationGroup="1" Visible="False">*</asp:RequiredFieldValidator>
+        </div>
+        <div>
+            <asp:TextBox ID="txtBody" runat="server" placeHolder="Body" TextMode="MultiLine" CssClass="body"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Body is a required field." ControlToValidate="txtBody" Display="Dynamic" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
+        </div>
+        <div>
+            <asp:Button ID="btnSend" runat="server" Text="Send" OnClick="btnSend_Click" ValidationGroup="1" CssClass="send" Visible="False"/>
+        </div>
+
+        <div>
+            <asp:CheckBox ID="sendAll" runat="server" Text="Send all" CssClass="checkBox" Visible="False"/>
+        </div>
+    </div>
     <br />
     <asp:Button ID="CollapseEmail" runat="server" Text="Collapse" Visible="False" Width="160px" OnClick="CollapseEmail_Click" />
 
