@@ -18,6 +18,15 @@ namespace CoastalBendKidneyFoundation
         string str;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Request.Cookies["UserName"] != null)
+                {
+                    txtCommentName.Text = Request.Cookies["UserName"].Value;
+                }
+                else
+                    txtCommentName.Text = "Your Name";
+            }
             /*
             SqlConnection con = new SqlConnection(strConnString);
             con.Open();
