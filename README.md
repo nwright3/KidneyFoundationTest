@@ -1,18 +1,18 @@
-# Coastal Bend Kidney Foundation
+# Coastal Bend Kidney Foundation Website
 
 The Coastal Bend Kidney Foundation is a non-profit organization dedicated to assisting the South Texas community by providing the testing, tools, and resources to accommodate those with varying levels of kidney disease or failure.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+We're only supporting instructions to run the website locally. For instructions on how to run local, continue on below.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+You will need:
 
-```
-Give examples
-```
+- Visual Studio
+    - .NET Framework 
+
 
 ### Installing
 
