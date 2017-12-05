@@ -119,17 +119,17 @@
 <p class="auto-style16">
     &nbsp;</p>
 
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" DataSourceID="SqlDataSource5" Visible="False" Width="600px" AutoGenerateColumns="False" DataKeyNames="User_ID" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True" Height="400px">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" DataSourceID="SqlDataSource5" Visible="False" Width="800px" AutoGenerateColumns="False" DataKeyNames="User_ID" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True" Height="500px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                <asp:BoundField DataField="User_ID" HeaderText="User_ID" InsertVisible="False" ReadOnly="True" SortExpression="User_ID" />
-                <asp:BoundField DataField="User_Username" HeaderText="User_Username" SortExpression="User_Username" />
-                <asp:BoundField DataField="User_Password" HeaderText="User_Password" SortExpression="User_Password" />
-                <asp:BoundField DataField="User_Email" HeaderText="User_Email" SortExpression="User_Email" />
-                <asp:BoundField DataField="User_FName" HeaderText="User_FName" SortExpression="User_FName" />
-                <asp:BoundField DataField="User_LName" HeaderText="User_LName" SortExpression="User_LName" />
-                <asp:BoundField DataField="User_Country" HeaderText="User_Country" SortExpression="User_Country" />
+                <asp:BoundField DataField="User_ID" HeaderText="User ID" InsertVisible="False" ReadOnly="True" SortExpression="User_ID" />
+                <asp:BoundField DataField="User_Username" HeaderText="Username" SortExpression="User_Username" />
+                <asp:BoundField DataField="User_Password" HeaderText="Password" SortExpression="User_Password" />
+                <asp:BoundField DataField="User_Email" HeaderText="User Email" SortExpression="User_Email" />
+                <asp:BoundField DataField="User_FName" HeaderText="First Name" SortExpression="User_FName" />
+                <asp:BoundField DataField="User_LName" HeaderText="Last Name" SortExpression="User_LName" />
+                <asp:BoundField DataField="User_Country" HeaderText="Country" SortExpression="User_Country" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -144,17 +144,17 @@
         </asp:GridView>
         <asp:Button ID="CollapseUserControl" runat="server" OnClick="CollapseUserControl_Click" Text="Collapse" Visible="False" Width="160px" />
                    <br />
-    <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Admin_ID" DataSourceID="SqlDataSource4" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="400px" Width="600px">
+    <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Admin_ID" DataSourceID="SqlDataSource4" Visible="False" CellPadding="4" ForeColor="#333333" GridLines="None" Height="500px" Width="800px">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-            <asp:BoundField DataField="Admin_ID" HeaderText="Admin_ID" InsertVisible="False" ReadOnly="True" SortExpression="Admin_ID" />
-            <asp:BoundField DataField="Admin_Username" HeaderText="Admin_Username" SortExpression="Admin_Username" />
-            <asp:BoundField DataField="Admin_Password" HeaderText="Admin_Password" SortExpression="Admin_Password" />
-            <asp:BoundField DataField="Admin_Email" HeaderText="Admin_Email" SortExpression="Admin_Email" />
-            <asp:BoundField DataField="Admin_FName" HeaderText="Admin_FName" SortExpression="Admin_FName" />
-            <asp:BoundField DataField="Admin_LName" HeaderText="Admin_LName" SortExpression="Admin_LName" />
-            <asp:BoundField DataField="Admin_Country" HeaderText="Admin_Country" SortExpression="Admin_Country" />
+            <asp:BoundField DataField="Admin_ID" HeaderText="Admin ID" InsertVisible="False" ReadOnly="True" SortExpression="Admin_ID" />
+            <asp:BoundField DataField="Admin_Username" HeaderText="Admin Username" SortExpression="Admin_Username" />
+            <asp:BoundField DataField="Admin_Password" HeaderText="Password" SortExpression="Admin_Password" />
+            <asp:BoundField DataField="Admin_Email" HeaderText="Admin Email" SortExpression="Admin_Email" />
+            <asp:BoundField DataField="Admin_FName" HeaderText="First Name" SortExpression="Admin_FName" />
+            <asp:BoundField DataField="Admin_LName" HeaderText="Last Name" SortExpression="Admin_LName" />
+            <asp:BoundField DataField="Admin_Country" HeaderText="Country" SortExpression="Admin_Country" />
         </Columns>
         <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -170,7 +170,7 @@
             
     <asp:Button ID="CollapseAdminControl" runat="server" OnClick="CollapseAdminControl_Click" Text="Collapse" Visible="False" Width="160px" />
     <br />
-    <table id="EventTable" class="auto-style3 " style="visibility:visible;float:left" runat="server">
+    <table id="EventTable" class="auto-style3 " style="visibility:visible;float:left" runat="server" visible="False">
         <tr>
             <td class="auto-style1">Event Name:</td>
             <td class="auto-style2">
@@ -207,16 +207,17 @@
         </tr>
     </table>
     <br>
-    <asp:GridView ID="GridView4" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Event_Id" DataSourceID="EventConnection" ForeColor="#333333" GridLines="None" Visible="False" AllowSorting="True" Height="400px" Width="600px">
+        <div class="container" style="width: 600px">
+    <asp:GridView ID="GridView4" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Event_Id" DataSourceID="EventConnection" ForeColor="#333333" GridLines="None" Visible="False" AllowSorting="True" Height="500px" Width="800px">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-            <asp:BoundField DataField="Event_Id" HeaderText="Event_Id" InsertVisible="False" ReadOnly="True" SortExpression="Event_Id" />
-            <asp:BoundField DataField="Event_Name" HeaderText="Event_Name" SortExpression="Event_Name" />
-            <asp:BoundField DataField="Event_Date" HeaderText="Event_Date" SortExpression="Event_Date" />
-            <asp:BoundField DataField="Event_Place" HeaderText="Event_Place" SortExpression="Event_Place" />
-            <asp:BoundField DataField="Event_Description" HeaderText="Event_Description" SortExpression="Event_Description" />
-            <asp:BoundField DataField="Event_Attendance" HeaderText="Event_Attendance" SortExpression="Event_Attendance" />
+            <asp:BoundField DataField="Event_Id" HeaderText="Event ID" InsertVisible="False" ReadOnly="True" SortExpression="Event_Id" />
+            <asp:BoundField DataField="Event_Name" HeaderText="Event Name" SortExpression="Event_Name" />
+            <asp:BoundField DataField="Event_Date" HeaderText="Event Date" SortExpression="Event_Date" />
+            <asp:BoundField DataField="Event_Place" HeaderText="Event Place" SortExpression="Event_Place" />
+            <asp:BoundField DataField="Event_Description" HeaderText="Event Description" SortExpression="Event_Description" />
+            <asp:BoundField DataField="Event_Attendance" HeaderText="Event Attendance" SortExpression="Event_Attendance" />
         </Columns>
         <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -229,10 +230,11 @@
         <SortedDescendingCellStyle BackColor="#E9EBEF" />
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
+            </div>
     </br>
     <asp:Button ID="CollapseEventControl" runat="server" Text="Collapse" Visible="False" Width="160px" OnClick="CollapseEventControl_Click" />
 <br />
-    <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Img_Id" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" Visible="False" AllowSorting="True" Height="400px" Width="600px">
+    <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Img_Id" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" Visible="False" AllowSorting="True" Height="500px" Width="800px">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
@@ -251,9 +253,9 @@
         <SortedDescendingCellStyle BackColor="#E9EBEF" />
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
-        <asp:FileUpload ID="FileUpload1" runat="server" Text="No file choosen"/>
+        <asp:FileUpload ID="FileUpload1" runat="server" Text="No file choosen" Visible="False"/>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="FileUpload1" Display="Dynamic" ErrorMessage="Before you insert, you must select a file first." ValidationGroup="ValGroupInsert">*</asp:RequiredFieldValidator>
-        <asp:Button ID="btnUpload" runat="server" Text="Insert" OnClick="btnUpload_Click" ValidationGroup="ValGroupInsert" />
+        <asp:Button ID="btnUpload" runat="server" Text="Insert" OnClick="btnUpload_Click" ValidationGroup="ValGroupInsert" Visible="False" />
     <br />
 
                 <asp:Button ID="CollapseSlideShow" runat="server" OnClick="CollapseSlideShow_Click" Text="Collapse" Visible="False" Width="160px" />
@@ -264,7 +266,7 @@
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="1" Visible="False" />
 
     <div class="main">
-        <asp:GridView ID="GridView5" runat="server" AutoGenerateColumns="False" DataKeyNames="User_ID" DataSourceID="SqlDataSource1" AllowPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None" Height="400px" Width="600px">
+        <asp:GridView ID="GridView5" runat="server" AutoGenerateColumns="False" DataKeyNames="User_ID" DataSourceID="SqlDataSource1" AllowPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None" Height="500px" Width="800px" Visible="False">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:TemplateField>
@@ -272,10 +274,10 @@
                         <asp:CheckBox ID="chkSelect" runat="server" />
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:BoundField DataField="User_ID" HeaderText="User_ID" InsertVisible="False" ReadOnly="True" SortExpression="User_ID" />
-                <asp:BoundField DataField="User_Email" HeaderText="User_Email" SortExpression="User_Email" />
-                <asp:BoundField DataField="User_FName" HeaderText="User_FName" SortExpression="User_FName" />
-                <asp:BoundField DataField="User_LName" HeaderText="User_LName" SortExpression="User_LName" />
+                <asp:BoundField DataField="User_ID" HeaderText="User ID" InsertVisible="False" ReadOnly="True" SortExpression="User_ID" />
+                <asp:BoundField DataField="User_Email" HeaderText="User Email" SortExpression="User_Email" />
+                <asp:BoundField DataField="User_FName" HeaderText="First Name" SortExpression="User_FName" />
+                <asp:BoundField DataField="User_LName" HeaderText="Last Name" SortExpression="User_LName" />
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -296,7 +298,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Subject is a required field." ControlToValidate="txtSubject" Display="Dynamic" ForeColor="Red" ValidationGroup="1" Visible="False">*</asp:RequiredFieldValidator>
         </div>
         <div>
-            <asp:TextBox ID="txtBody" runat="server" placeHolder="Body" TextMode="MultiLine" CssClass="body"></asp:TextBox>
+            <asp:TextBox ID="txtBody" runat="server" placeHolder="Body" TextMode="MultiLine" CssClass="body" Visible="False"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Body is a required field." ControlToValidate="txtBody" Display="Dynamic" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
         </div>
         <div>
