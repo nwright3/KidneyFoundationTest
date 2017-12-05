@@ -128,7 +128,7 @@
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Signup.aspx" />
-    <Content Include="style\AdminConsole.css" />
+    <Content Include="style\AdminContact.css" />
     <Content Include="style\Login.css" />
     <Content Include="style\MasterPageStyle.css" />
     <Content Include="Volunteer.aspx" />
