@@ -52,5 +52,17 @@ namespace CoastalBendKidneyFoundation
             com.ExecuteNonQuery();
             con.Close();
         }
+
+        protected void bttAttending_Click(object sender, EventArgs e)
+        {
+            bttAttending.Visible = false;
+
+            SqlConnection con = new SqlConnection(strConnString);
+            con.Open();
+            str = "UPDATE Event SET Event_Attendance = Event_Attendance + 1";
+            com = new SqlCommand(str, con);
+            com.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }
