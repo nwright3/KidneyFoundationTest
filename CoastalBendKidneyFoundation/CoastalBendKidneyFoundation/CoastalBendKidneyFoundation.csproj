@@ -97,7 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin Controls.aspx" />
-    <Content Include="Contact.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="images\firstOne.png" />
     <Content Include="images\test2.jpg" />
@@ -107,7 +106,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="scripts\PasswordStrength.js" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Default.Master" />
     <None Include="Web.Debug.config">
@@ -135,13 +133,6 @@
     </Compile>
     <Compile Include="Admin Controls.aspx.designer.cs">
       <DependentUpon>Admin Controls.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

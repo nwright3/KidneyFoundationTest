@@ -145,6 +145,7 @@ namespace CoastalBendKidneyFoundation
             // Checking to see if username already exists
             try
             {
+                // Creating sql command
                 SqlCommand check = new SqlCommand();
                 check.CommandText = "select * from [User]";
                 check.Connection = db;
