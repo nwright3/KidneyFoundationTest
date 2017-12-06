@@ -98,9 +98,9 @@
   <ItemGroup>
     <Content Include="Admin Controls.aspx" />
     <Content Include="Home.aspx" />
-    <Content Include="images\firstOne.png" />
-    <Content Include="images\test2.jpg" />
-    <Content Include="images\test3.jpg" />
+    <Content Include="images\firstOne.jpg" />
+    <Content Include="images\secondOne.jpg" />
+    <Content Include="images\thirdOne.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
