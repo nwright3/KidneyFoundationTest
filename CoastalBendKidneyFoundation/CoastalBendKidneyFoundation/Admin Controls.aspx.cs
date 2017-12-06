@@ -244,8 +244,8 @@ namespace CoastalBendKidneyFoundation
                     try
                     {
                         smtpClient.Send(mailMessage);
-                        //Label1.Text = "E-mail(s) sent successfully!";           
-                        //Label1.Visible = true;
+                        Label1.Text = "E-mail(s) sent successfully!";           
+                        Label1.Visible = true;
                     }
                     catch
                     {
@@ -284,13 +284,13 @@ namespace CoastalBendKidneyFoundation
                         try
                         {
                             smtpClient.Send(mailMessage);
-                            //Label1.Text = "E-mail(s) sent successfully!";
-                            //Label1.Visible = true;
+                            Label1.Text = "E-mail(s) sent successfully!";
+                            Label1.Visible = true;
                         }
                         catch
                         {
-                            //Label1.Text = "An error occurred while sending E-mail(s)!";
-                            //Label1.Visible = true;
+                            Label1.Text = "An error occurred while sending E-mail(s)!";
+                            Label1.Visible = true;
 
                         }
                         finally
@@ -301,17 +301,21 @@ namespace CoastalBendKidneyFoundation
                 }
 
                 // If no emails sent
+
                 if (i == 0)
+
                 {
-                    ScriptManager.RegisterClientScriptBlock(this,
-                        this.GetType(), "alertMessage", "alert('You must select all or at least one checkbox in the gridview!')", true);
+                    Label1.Text = "You must select all or at least one checkbox in the gridview!";
+                    Label1.Visible = true;
+                   // ScriptManager.RegisterClientScriptBlock(this,
+                   //   this.GetType(), "alertMessage", "alert('You must select all or at least one checkbox in the gridview!')", true);
                 }
 
                 else
                 {
-                    ScriptManager.RegisterClientScriptBlock(this,
-                        this.GetType(), "alertMessage", "alert('Send successful" +
-                        "!')", true);
+                   // ScriptManager.RegisterClientScriptBlock(this,
+                     //   this.GetType(), "alertMessage", "alert('Send successful" +
+                       // "!')", true);
                 }
             }
         }
