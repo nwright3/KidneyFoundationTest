@@ -223,11 +223,11 @@ namespace CoastalBendKidneyFoundation
         protected void btnSend_Click(object sender, EventArgs e)        //Send email function
         {
             int i = 0; // Counts the number of emails sent
-
+            
             // Send all
             if (sendAll.Checked)            //send all users 
             {
-                foreach (GridViewRow item in GridView1.Rows)
+                foreach (GridViewRow item in GridView5.Rows)
                 {
                     string email = item.Cells[2].Text.Trim();
                     MailMessage mailMessage = new MailMessage();
@@ -244,13 +244,13 @@ namespace CoastalBendKidneyFoundation
                     try
                     {
                         smtpClient.Send(mailMessage);
-                        Label1.Text = "E-mail(s) sent successfully!";           
-                        Label1.Visible = true;
+                        //Label1.Text = "E-mail(s) sent successfully!";           
+                        //Label1.Visible = true;
                     }
                     catch
                     {
-                        Label1.Text = "An error occurred while sending E-mail(s)!";
-                        Label1.Visible = true;
+                        //Label1.Text = "An error occurred while sending E-mail(s)!";
+                        //Label1.Visible = true;
 
                     }
                     finally
@@ -265,8 +265,9 @@ namespace CoastalBendKidneyFoundation
             else
             {               //select by hand
                 // Getting user emails
-                foreach (GridViewRow item in GridView1.Rows)
+                foreach (GridViewRow item in GridView5.Rows)
                 {
+                    //(item.FindControl("chkSelect") as CheckBox).Checked
                     if ((item.FindControl("chkSelect") as CheckBox).Checked)
                     {
                         string email = item.Cells[2].Text.Trim();
@@ -283,13 +284,13 @@ namespace CoastalBendKidneyFoundation
                         try
                         {
                             smtpClient.Send(mailMessage);
-                            Label1.Text = "E-mail(s) sent successfully!";
-                            Label1.Visible = true;
+                            //Label1.Text = "E-mail(s) sent successfully!";
+                            //Label1.Visible = true;
                         }
                         catch
                         {
-                            Label1.Text = "An error occurred while sending E-mail(s)!";
-                            Label1.Visible = true;
+                            //Label1.Text = "An error occurred while sending E-mail(s)!";
+                            //Label1.Visible = true;
 
                         }
                         finally
