@@ -257,6 +257,9 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="FileUpload1" Display="Dynamic" ErrorMessage="Before you insert, you must select a file first." ValidationGroup="ValGroupInsert">*</asp:RequiredFieldValidator>
         <asp:Button ID="btnUpload" runat="server" Text="Insert" OnClick="btnUpload_Click" ValidationGroup="ValGroupInsert" Visible="False" />
     <br />
+    <br />
+    <asp:Label ID="Label2" runat="server" Text="ImageUpdateLabel" Visible="False"></asp:Label>
+    <br />
 
                 <asp:Button ID="CollapseSlideShow" runat="server" OnClick="CollapseSlideShow_Click" Text="Collapse" Visible="False" Width="160px" />
     <br />
@@ -309,6 +312,8 @@
             <asp:CheckBox ID="sendAll" runat="server" Text="Send all" CssClass="checkBox" Visible="False"/>
         </div>
     </div>
+    <asp:Label ID="Label1" runat="server" Text="EmailUpdateLabel" Visible="False"></asp:Label>
+    <br />
     <br />
     <asp:Button ID="CollapseEmail" runat="server" Text="Collapse" Visible="False" Width="160px" OnClick="CollapseEmail_Click" />
 
