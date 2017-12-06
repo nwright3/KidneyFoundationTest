@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Henry C Reeves IV
+ * Home.aspx.cs
+ * Due: December 6 , 2017
+ * 
+ * This is Signup.aspx.cs, this is where the user an sign up for our page. It
+ * is impossible for a user to signup as an Admin unless the administator goes
+ * to the database and adds himeself/herself. There is a password format requirement.
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.Sql;

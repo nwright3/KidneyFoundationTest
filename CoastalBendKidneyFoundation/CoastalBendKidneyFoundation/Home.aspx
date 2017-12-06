@@ -4,6 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="/style/Home.css" type="text/css" runat="server" />
+
+        <!-- AJAX script manager !-->
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
 
@@ -11,6 +13,7 @@
 
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="1" />
 
+        <!-- This is Update Panal, AJAX timer, and Image URL !-->
     <div class="gallery">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
@@ -22,6 +25,7 @@
         </asp:UpdatePanel>
     </div>
 
+    <!-- This is most of the home page, all of the information in it !-->
     <div class="main">
         <article>
             <h3>Mission Statement</h3>
@@ -59,6 +63,7 @@ and stage special events to further develop donor relationships with foundations
                 to better serve South Texas.
             </p>
 
+                <!-- The last part of Home.aspx !-->
             <h3 class="contactTitle">Contact Us</h3>
 
             <div class="contact" id="contact">

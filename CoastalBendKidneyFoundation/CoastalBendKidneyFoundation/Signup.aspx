@@ -34,7 +34,7 @@
             </div>
 
             <div>
-                <asp:TextBox runat="server" placeHolder="Password" ID="txtPassword" TextMode="Password" CssClass="textboxes" ></asp:TextBox>
+                <asp:TextBox runat="server" placeHolder="Password" ID="txtPassword" TextMode="Password" CssClass="textboxes"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtFirstname" Display="Dynamic" ErrorMessage="Password must be filled out." ToolTip="This field is required." ForeColor="Red" ValidationGroup="signup">*</asp:RequiredFieldValidator>
             </div>
 
@@ -64,6 +64,5 @@
 
         <br />
     </div>
-
 
 </asp:Content>

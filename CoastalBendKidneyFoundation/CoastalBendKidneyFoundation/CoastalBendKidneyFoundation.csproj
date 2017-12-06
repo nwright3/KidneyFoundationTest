@@ -108,6 +108,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="scripts\PasswordStrength.js" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Default.Master" />
     <None Include="Web.Debug.config">

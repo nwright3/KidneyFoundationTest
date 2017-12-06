@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+ * Henry C Reeves IV
+ * Home.aspx.cs
+ * Due: December 6 , 2017
+ * 
+ * This is the back-end for Home.aspx and this is the webpage that user's start on.
+ * There are a few important things to mention in this file, this is where the
+ * image gallery is working at. It works with an AJAX timer and the Image table.
+ * Addionally, this is where the user can send a message to the development team.
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -75,20 +85,34 @@ namespace CoastalBendKidneyFoundation
 
         protected void btnSend_Click(object sender, EventArgs e)
         {
+            // Creating mail message
             MailMessage mailMessage = new MailMessage();
-            mailMessage.From = new MailAddress("hreeves983@gmail.com");
-            mailMessage.To.Add("hreeves983@gmail.com");
+            mailMessage.From = new MailAddress("hreeves983@gmail.com"); // Setting up from
+            mailMessage.To.Add("hreeves983@gmail.com"); // Setting up to
+
+            // Establishing subject and body
             mailMessage.Subject = txtSubject.Text;
             mailMessage.Body = "<b>Sender name: </b> " + txtName.Text
                 + "<br/>" + "<b>Sender Email: </b>" + txtEmail.Text + "<br/>"
                 + txtBody.Text;
-            mailMessage.IsBodyHtml = true;
+            mailMessage.IsBodyHtml = true; // Need this because I added html tags
 
+            // Setting up the smtp client
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.EnableSsl = true;
             smtpClient.Credentials = new System.Net.NetworkCredential("hreeves983@gmail.com", "henry3434");
-            smtpClient.Send(mailMessage);
 
+            // Trying to send mail message
+            try
+            {
+                smtpClient.Send(mailMessage);
+            }
+
+            // if it doesn't work, tell the user
+            catch
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Unable to send your message, please try again later.')", true);
+            }
         }
     }
 }
