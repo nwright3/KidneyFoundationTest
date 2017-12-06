@@ -103,7 +103,6 @@
     <Content Include="images\test2.jpg" />
     <Content Include="images\test3.jpg" />
     <Content Include="Login.aspx" />
-    <Content Include="main.css" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -120,7 +119,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="index.html" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Signup.aspx" />

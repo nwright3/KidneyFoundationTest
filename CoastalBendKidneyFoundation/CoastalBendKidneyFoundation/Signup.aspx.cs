@@ -54,24 +54,27 @@ namespace CoastalBendKidneyFoundation
                 cmd.CommandText = "INSERT INTO [User] (User_Username, User_Password, User_Email, User_FName, User_LName, User_Country) VALUES ('" + txtUsername.Text + "', '" + txtPassword.Text + "', '" + txtEmail.Text + "', '" + txtFirstname.Text + "', '" + txtLastname.Text + "', '" + txtCountry.Text + "')";
                 cmd.Connection = db;
 
+                // Trying to execute sql statement to insert a user to the User table
                 try
                 {
-                    db.Open();
-                    cmd.ExecuteNonQuery();
-                    pass = true;
+                    db.Open(); // Opening connection
+                    cmd.ExecuteNonQuery(); // executing command
+                    pass = true; // success
                 }
 
                 catch (System.Data.SqlClient.SqlException ex)
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Error: Database error occured.')" + ex.Message, true);
-                    pass = false;
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Error: Database error occured.')", true);
+                    pass = false; // failed
                 }
 
+                // Closing the database connection
                 finally
                 {
                     db.Close();
                 }
 
+                // If inserition was successful
                 if (pass)
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Registration successful! Try logging in.')", true); // This will not show up for some reason, I do not know why....
@@ -79,7 +82,7 @@ namespace CoastalBendKidneyFoundation
                 }
             }
         }
-
+        // This function checks to see if the password is in the correct format
         public bool checkPassword()
         {
             bool correctForm = false;
@@ -174,6 +177,7 @@ namespace CoastalBendKidneyFoundation
             return pass;
         }
 
+        // Takes the user to Login.aspx if they already have an account
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             Response.Redirect("Login.aspx");
