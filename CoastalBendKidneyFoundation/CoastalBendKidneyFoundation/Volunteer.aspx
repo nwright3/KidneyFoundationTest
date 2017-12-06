@@ -227,7 +227,7 @@ body {
         <br />
         <asp:TextBox ID="txtCommentName" runat="server" Height="21px" Width="325px">Your Name</asp:TextBox>
         <br />
-        <asp:TextBox ID="txtComment" runat="server" Height="106px" Width="325px"></asp:TextBox>
+        <asp:TextBox ID="txtComment" runat="server" Height="106px" Width="325px" TextMode="MultiLine"></asp:TextBox>
         <br />
         <asp:Button ID="Button1" runat="server" Height="38px" Text="Submit" Width="76px" OnClick="Button1_Click" />
         <br />
@@ -236,5 +236,4 @@ body {
         <br />
 
     </div>
-
     </asp:Content>

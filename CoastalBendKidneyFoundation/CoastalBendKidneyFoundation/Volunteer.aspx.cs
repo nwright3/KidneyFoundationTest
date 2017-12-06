@@ -27,29 +27,6 @@ namespace CoastalBendKidneyFoundation
                 else
                     txtCommentName.Text = "Your Name";
             }
-            /*
-            SqlConnection con = new SqlConnection(strConnString);
-            con.Open();
-            str = "select * from Events";
-            com = new SqlCommand(str, con);
-            SqlDataReader reader = com.ExecuteReader();
-
-            reader.Read();
-            lblEventName.Text = reader["Event_Name"].ToString();
-
-            reader.Read();
-            lblEventDate.Text = reader["Event_Date"].ToString();
-
-            reader.Read();
-            lblEventPlace.Text = reader["Event_Place"].ToString();
-
-            reader.Read();
-            lblEventDesc.Text = reader["Event_Description"].ToString();
-
-            reader.Read();
-            lblEventAtt.Text = reader["Event_Attendance"].ToString();
-
-            con.Close(); */
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -60,6 +37,7 @@ namespace CoastalBendKidneyFoundation
             com = new SqlCommand(str, con);
             com.ExecuteNonQuery();
             con.Close();
+            DataList1.DataBind();
         }
 
         protected void bttAttending_Click(object sender, EventArgs e)
@@ -73,6 +51,7 @@ namespace CoastalBendKidneyFoundation
             com = new SqlCommand(str, con);
             com.ExecuteNonQuery();
             con.Close();
+            FormView1.DataBind();
         }
     }
 }
