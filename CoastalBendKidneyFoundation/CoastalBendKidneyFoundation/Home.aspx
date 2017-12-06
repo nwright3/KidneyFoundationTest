@@ -19,7 +19,7 @@
             <ContentTemplate>
                 <asp:Timer ID="Timer1" runat="server" Interval="2500" OnTick="Timer1_Tick">
                 </asp:Timer>
-                <asp:Image ID="Image1" Height="450px" Width="800px" runat="server" />
+                <asp:Image ID="Image1" Height="500px" Width="800px" runat="server" />
                 <asp:Label ID="name" runat="server" Visible="true"></asp:Label>
             </ContentTemplate>
         </asp:UpdatePanel>
