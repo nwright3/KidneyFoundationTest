@@ -13,6 +13,7 @@ namespace CoastalBendKidneyFoundation
 {
     public partial class Volunteer : System.Web.UI.Page
     {
+        /*This is so if a user is login to the website, the username will be presented in the Comments section instead of the user being able to use any other username.*/
         string strConnString = ConfigurationManager.ConnectionStrings["CostalbendKidneyFoundationConnectionString3"].ConnectionString;
         SqlCommand com;
         string str;
@@ -23,11 +24,17 @@ namespace CoastalBendKidneyFoundation
                 if (Request.Cookies["UserName"] != null)
                 {
                     txtCommentName.Text = Request.Cookies["UserName"].Value;
+                    txtCommentName.ReadOnly = true;
                 }
                 else
                     txtCommentName.Text = "Your Name";
             }
         }
+
+        /* This is to submit a comment onto the event page. '
+           This allows anyone on the website to interact with
+           the users and provide information for the event.
+             */
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -39,6 +46,10 @@ namespace CoastalBendKidneyFoundation
             con.Close();
             DataList1.DataBind();
         }
+
+
+        /* This will increment the attendance count by one once clicked by a user. This will blackout the button so that it isnt spammable.
+     */
 
         protected void bttAttending_Click(object sender, EventArgs e)
         {
