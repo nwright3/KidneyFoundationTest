@@ -22,7 +22,7 @@ Unzip to your working directory, and open the .sln file with Visual Studio.
 
 To install the database locally (not recommended), follow the instructions below:
 
-If you plan on using the .BACPAC file to run the database locally, please follow the instructions given on the Microsoft Document below:  https://docs.microsoft.com/en-us/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database
+If you plan on using the .BACPAC file to run the database locally, please follow the instructions given on the Microsoft Document here:  https://docs.microsoft.com/en-us/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database
 
 
 ## Running the tests
